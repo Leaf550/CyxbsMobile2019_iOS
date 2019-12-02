@@ -176,6 +176,8 @@ typedef NS_ENUM(NSUInteger, LoginStates) {
 }
 - (void)touchSchoolCar {
     NSLog(@"点击了校车查询");
+//    SchoolCarController *vc = [[SchoolCarController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)touchSchedule {
     NSLog(@"点击了空课表");

@@ -177,4 +177,9 @@
 //教务新闻列表
 #define NEWSLIST @"https://cyxbsmobile.redrock.team/234/newapi/jwNews/list"
 
+//我的成绩
+#define MAKEAPI @"https://cyxbsmobile.redrock.team/api/examReexam"
+#define GRADECLASSAPI @"https://cyxbsmobile.redrock.team/api/examSchedule"
+#define GRADEAPI @"https://cyxbsmobile.redrock.team/api/examGrade"
+
 #endif

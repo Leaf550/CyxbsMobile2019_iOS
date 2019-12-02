@@ -8,6 +8,7 @@
 
 #import "LQQFinderToolViewController.h"
 #import "FinderToolViewItem.h"
+#import "ExamTotalViewController.h"
 @interface LQQFinderToolViewController ()<UIScrollViewDelegate>
 @property (nonatomic, weak) UIScrollView *contentView;
 @property (nonatomic)NSArray<FinderToolViewItem *> *toolViewItems;
@@ -81,6 +82,7 @@
     FinderToolViewItem *item2 = [[FinderToolViewItem alloc]initWithIconView:@"校车轨迹" Title:@"校车轨迹" Detail:@"帮助同学们找到当前校车"];
     FinderToolViewItem *item3 = [[FinderToolViewItem alloc]initWithIconView:@"教室查询" Title:@"课表查询" Detail:@"帮助同学们知道应该上什么课"];
     FinderToolViewItem *item4 = [[FinderToolViewItem alloc]initWithIconView:@"考试成绩" Title:@"考试成绩" Detail:@"帮助同学们知道应该上什么课"];
+    [item4 addTarget:self action:@selector(touchExamValue) forControlEvents:UIControlEventTouchUpInside];
     FinderToolViewItem *item5 = [[FinderToolViewItem alloc]initWithIconView:@"空课表" Title:@"空课表" Detail:@"帮助同学们找到当前校车"];
     FinderToolViewItem *item6 = [[FinderToolViewItem alloc]initWithIconView:@"校历" Title:@"校历" Detail:@"帮助同学们找到当前校车"];
     FinderToolViewItem *item7 = [[FinderToolViewItem alloc]initWithIconView:@"重邮地图" Title:@"重邮地图" Detail:@"帮助同学们找到当前校车"];
@@ -129,6 +131,10 @@
         times++;
     }
 
+}
+- (void)touchExamValue {
+    ExamTotalViewController *vc = [[ExamTotalViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

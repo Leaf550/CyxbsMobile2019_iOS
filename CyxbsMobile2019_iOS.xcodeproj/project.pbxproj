@@ -65,6 +65,16 @@
 		1AFD153223819FBD004D9CEA /* EditMyInfoTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFD153123819FBD004D9CEA /* EditMyInfoTransitionAnimator.m */; };
 		2A484C14CCF353BF33ED4EE4 /* libPods-CyxbsMobile2019_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0913CE267FCBD5EB99727800 /* libPods-CyxbsMobile2019_iOS.a */; };
 		EE062F342377F5D600E5919E /* OneNewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE062F332377F5D600E5919E /* OneNewsItem.m */; };
+		EE182AB123952F57001C0928 /* ExamScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE182AA123952F57001C0928 /* ExamScheduleTableViewCell.xib */; };
+		EE182AB223952F57001C0928 /* ExamScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE182AA223952F57001C0928 /* ExamScheduleTableViewCell.m */; };
+		EE182AB323952F57001C0928 /* GradeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE182AA623952F57001C0928 /* GradeView.m */; };
+		EE182AB423952F57001C0928 /* ExamGradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE182AA723952F57001C0928 /* ExamGradeViewController.xib */; };
+		EE182AB523952F57001C0928 /* ExamGradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE182AA823952F57001C0928 /* ExamGradeViewController.m */; };
+		EE182AB623952F57001C0928 /* MakeUpExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE182AA923952F57001C0928 /* MakeUpExamViewController.m */; };
+		EE182AB723952F57001C0928 /* ExamSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE182AAC23952F57001C0928 /* ExamSegementView.m */; };
+		EE182AB823952F57001C0928 /* ExamScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE182AAD23952F57001C0928 /* ExamScheduleViewController.m */; };
+		EE182AB923952F57001C0928 /* ExamTotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE182AAF23952F57001C0928 /* ExamTotalViewController.m */; };
+		EE182ABB23953240001C0928 /* ExamScore.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE182ABA23953240001C0928 /* ExamScore.xcassets */; };
 		EE3C180C23715BAD004233C5 /* VolunteerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3C180B23715BAD004233C5 /* VolunteerModel.m */; };
 		EE67A4EC237E60F500BCF5F4 /* FinderToolViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE67A4EB237E60F500BCF5F4 /* FinderToolViewItem.m */; };
 		EE67A4EF237E691B00BCF5F4 /* LQQFinderToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE67A4EE237E691B00BCF5F4 /* LQQFinderToolViewController.m */; };
@@ -212,6 +222,23 @@
 		6F3D5CAF0787713C5281B516 /* Pods-CyxbsMobile2019_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CyxbsMobile2019_iOS.debug.xcconfig"; path = "Target Support Files/Pods-CyxbsMobile2019_iOS/Pods-CyxbsMobile2019_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		EE062F322377F5D600E5919E /* OneNewsItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneNewsItem.h; sourceTree = "<group>"; };
 		EE062F332377F5D600E5919E /* OneNewsItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneNewsItem.m; sourceTree = "<group>"; };
+		EE182A9E23952F57001C0928 /* ExamTotalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamTotalViewController.h; sourceTree = "<group>"; };
+		EE182AA023952F57001C0928 /* ExamScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamScheduleTableViewCell.h; sourceTree = "<group>"; };
+		EE182AA123952F57001C0928 /* ExamScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamScheduleTableViewCell.xib; sourceTree = "<group>"; };
+		EE182AA223952F57001C0928 /* ExamScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamScheduleTableViewCell.m; sourceTree = "<group>"; };
+		EE182AA423952F57001C0928 /* GradeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeView.h; sourceTree = "<group>"; };
+		EE182AA523952F57001C0928 /* ExamGradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamGradeViewController.h; sourceTree = "<group>"; };
+		EE182AA623952F57001C0928 /* GradeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeView.m; sourceTree = "<group>"; };
+		EE182AA723952F57001C0928 /* ExamGradeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamGradeViewController.xib; sourceTree = "<group>"; };
+		EE182AA823952F57001C0928 /* ExamGradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamGradeViewController.m; sourceTree = "<group>"; };
+		EE182AA923952F57001C0928 /* MakeUpExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeUpExamViewController.m; sourceTree = "<group>"; };
+		EE182AAB23952F57001C0928 /* ExamScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamScheduleViewController.h; sourceTree = "<group>"; };
+		EE182AAC23952F57001C0928 /* ExamSegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamSegementView.m; sourceTree = "<group>"; };
+		EE182AAD23952F57001C0928 /* ExamScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamScheduleViewController.m; sourceTree = "<group>"; };
+		EE182AAE23952F57001C0928 /* ExamSegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamSegementView.h; sourceTree = "<group>"; };
+		EE182AAF23952F57001C0928 /* ExamTotalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamTotalViewController.m; sourceTree = "<group>"; };
+		EE182AB023952F57001C0928 /* MakeUpExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeUpExamViewController.h; sourceTree = "<group>"; };
+		EE182ABA23953240001C0928 /* ExamScore.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ExamScore.xcassets; sourceTree = "<group>"; };
 		EE3C180A23715BAD004233C5 /* VolunteerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolunteerModel.h; sourceTree = "<group>"; };
 		EE3C180B23715BAD004233C5 /* VolunteerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolunteerModel.m; sourceTree = "<group>"; };
 		EE67A4EA237E60F500BCF5F4 /* FinderToolViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinderToolViewItem.h; sourceTree = "<group>"; };
@@ -310,6 +337,7 @@
 		1A141323235F52290001417E /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				EE182A9D23952F57001C0928 /* ExamSchedule */,
 				EE4C44A7238273970004E00E /* Discover_MainPage */,
 				EE899DD82367D89900DDB0D9 /* NewDiscover6.0Media.xcassets */,
 				EE899DD22367D89900DDB0D9 /* Disconver_ToolPage */,
@@ -775,6 +803,54 @@
 			path = Volunteer;
 			sourceTree = "<group>";
 		};
+		EE182A9D23952F57001C0928 /* ExamSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				EE182A9E23952F57001C0928 /* ExamTotalViewController.h */,
+				EE182A9F23952F57001C0928 /* cellView */,
+				EE182AA323952F57001C0928 /* Grade */,
+				EE182AA923952F57001C0928 /* MakeUpExamViewController.m */,
+				EE182AAA23952F57001C0928 /* Controller */,
+				EE182AAF23952F57001C0928 /* ExamTotalViewController.m */,
+				EE182AB023952F57001C0928 /* MakeUpExamViewController.h */,
+				EE182ABA23953240001C0928 /* ExamScore.xcassets */,
+			);
+			path = ExamSchedule;
+			sourceTree = "<group>";
+		};
+		EE182A9F23952F57001C0928 /* cellView */ = {
+			isa = PBXGroup;
+			children = (
+				EE182AA023952F57001C0928 /* ExamScheduleTableViewCell.h */,
+				EE182AA123952F57001C0928 /* ExamScheduleTableViewCell.xib */,
+				EE182AA223952F57001C0928 /* ExamScheduleTableViewCell.m */,
+			);
+			path = cellView;
+			sourceTree = "<group>";
+		};
+		EE182AA323952F57001C0928 /* Grade */ = {
+			isa = PBXGroup;
+			children = (
+				EE182AA423952F57001C0928 /* GradeView.h */,
+				EE182AA523952F57001C0928 /* ExamGradeViewController.h */,
+				EE182AA623952F57001C0928 /* GradeView.m */,
+				EE182AA723952F57001C0928 /* ExamGradeViewController.xib */,
+				EE182AA823952F57001C0928 /* ExamGradeViewController.m */,
+			);
+			path = Grade;
+			sourceTree = "<group>";
+		};
+		EE182AAA23952F57001C0928 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EE182AAB23952F57001C0928 /* ExamScheduleViewController.h */,
+				EE182AAC23952F57001C0928 /* ExamSegementView.m */,
+				EE182AAD23952F57001C0928 /* ExamScheduleViewController.m */,
+				EE182AAE23952F57001C0928 /* ExamSegementView.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		EE4C44A7238273970004E00E /* Discover_MainPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,8 +1046,11 @@
 				1A5A5EDB23600C9100543BAE /* LoginViewController.xib in Resources */,
 				1A31062F23770C7300A56468 /* Mine.xcassets in Resources */,
 				1A5A5EDE23600CBE00543BAE /* Login.xcassets in Resources */,
+				EE182AB123952F57001C0928 /* ExamScheduleTableViewCell.xib in Resources */,
 				1A9B7677235F50A800725937 /* LaunchScreen.storyboard in Resources */,
+				EE182AB423952F57001C0928 /* ExamGradeViewController.xib in Resources */,
 				1A9B7674235F50A800725937 /* Assets.xcassets in Resources */,
+				EE182ABB23953240001C0928 /* ExamScore.xcassets in Resources */,
 				1A9B7672235F50A600725937 /* Main.storyboard in Resources */,
 				EE899DE52367D89A00DDB0D9 /* NewDiscover6.0Media.xcassets in Resources */,
 			);
@@ -1042,12 +1121,14 @@
 			files = (
 				1AFD151C237D81DD004D9CEA /* EditMyInfoPresenter.m in Sources */,
 				1A141338235F52440001417E /* QAQuestionsViewController.m in Sources */,
+				EE182AB923952F57001C0928 /* ExamTotalViewController.m in Sources */,
 				1A9B767A235F50A800725937 /* main.m in Sources */,
 				1A141377235F524B0001417E /* SYCSegmentViewButton.m in Sources */,
 				EE899DE72367D89A00DDB0D9 /* LQQFinderView.m in Sources */,
 				EE80AE002377B6660003023C /* ElectricFeeItem.m in Sources */,
 				1A5A5EF12361A82E00543BAE /* UserItemTool.m in Sources */,
 				1A141374235F524B0001417E /* NSNull+Helper.m in Sources */,
+				EE182AB623952F57001C0928 /* MakeUpExamViewController.m in Sources */,
 				1A14136F235F524B0001417E /* UserDefaultTool.m in Sources */,
 				1A141366235F524B0001417E /* AESCipher.m in Sources */,
 				1AFD1524237D826A004D9CEA /* EditMyInfoContentView.m in Sources */,
@@ -1060,14 +1141,17 @@
 				1A15DF97238D03B3005E0843 /* CheckInContentView.m in Sources */,
 				1A141378235F524B0001417E /* SYCSegmentView.m in Sources */,
 				1A5A5EE52360100B00543BAE /* UserItem.m in Sources */,
+				EE182AB723952F57001C0928 /* ExamSegementView.m in Sources */,
 				1A141369235F524B0001417E /* HCHttp.m in Sources */,
 				EE899DE32367D89A00DDB0D9 /* ElectricFeeModel.m in Sources */,
 				1A14136A235F524B0001417E /* ORWRequestCache.m in Sources */,
 				1AF4B6072362EBFE00A0823A /* NSDate+Timestamp.m in Sources */,
 				1A7BAC662369AC2900CA512D /* MineContentView.m in Sources */,
+				EE182AB223952F57001C0928 /* ExamScheduleTableViewCell.m in Sources */,
 				1AFD1527237D9A7E004D9CEA /* MineEditTextField.m in Sources */,
 				1A14136B235F524B0001417E /* MOHImageParamModel.m in Sources */,
 				1A5A5EEB236022C500543BAE /* LoginModel.m in Sources */,
+				EE182AB823952F57001C0928 /* ExamScheduleViewController.m in Sources */,
 				1AAFACF8236B360F00E854A3 /* MinePresenter.m in Sources */,
 				1A141372235F524B0001417E /* NSDate+schoolDate.m in Sources */,
 				1A5A5EDC23600C9100543BAE /* LoginViewController.m in Sources */,
@@ -1084,10 +1168,12 @@
 				1AFD153223819FBD004D9CEA /* EditMyInfoTransitionAnimator.m in Sources */,
 				1A14136D235F524B0001417E /* UIImage+Helper.m in Sources */,
 				EE3C180C23715BAD004233C5 /* VolunteerModel.m in Sources */,
+				EE182AB523952F57001C0928 /* ExamGradeViewController.m in Sources */,
 				1A141365235F524B0001417E /* UIFont+AdaptiveFont.m in Sources */,
 				1A141318235F51F20001417E /* ClassScheduleViewController.m in Sources */,
 				1A141320235F521C0001417E /* BaseTableViewController.m in Sources */,
 				1A9B766C235F50A600725937 /* AppDelegate.m in Sources */,
+				EE182AB323952F57001C0928 /* GradeView.m in Sources */,
 				EE062F342377F5D600E5919E /* OneNewsItem.m in Sources */,
 				1A14136C235F524B0001417E /* UIViewController+BackButtonHandler.m in Sources */,
 				1A141367235F524B0001417E /* NetWork.m in Sources */,
