@@ -9,6 +9,7 @@
 #import "LQQFinderToolViewController.h"
 #import "FinderToolViewItem.h"
 #import "ScheduleInquiryViewController.h"
+#import "TestArrangeViewController.h"
 #define color242_243_248to000000 [UIColor colorNamed:@"color242_243_248&#000000" inBundle:[NSBundle mainBundle] compatibleWithTraitCollection:nil]
 #define color242_243_248toFFFFFF [UIColor colorNamed:@"color242_243_248&#FFFFFF" inBundle:[NSBundle mainBundle] compatibleWithTraitCollection:nil]
 #define Color21_49_91_F0F0F2  [UIColor colorNamed:@"color21_49_91&#F0F0F2" inBundle:[NSBundle mainBundle] compatibleWithTraitCollection:nil]
@@ -111,6 +112,7 @@
     FinderToolViewItem *item8 = [[FinderToolViewItem alloc]initWithIconView:@"更多功能" Title:@"更多功能" Detail:@"帮助同学们找到当前校车"];
 
     [item5 addTarget:self action:@selector(chooseScheduleInquiry) forControlEvents:UIControlEventTouchUpInside];
+    [item4 addTarget:self action:@selector(chooseTestArrange) forControlEvents:UIControlEventTouchUpInside];
     NSMutableArray *itemsArray = [NSMutableArray array];
     [itemsArray addObject:item1];
     [itemsArray addObject:item2];
@@ -155,10 +157,16 @@
     }
 
 }
-// MARK: 以下是各种按钮点击事件的实现
+
+//MARK: - 空课表
 - (void) chooseScheduleInquiry {
     //点击了空课表
     ScheduleInquiryViewController *vc = [[ScheduleInquiryViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+//MARK: - 考试查询
+- (void)chooseTestArrange {
+    TestArrangeViewController *vc = [[TestArrangeViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 @end

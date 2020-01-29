@@ -211,6 +211,8 @@
 		DB34EB3C239BD4550052B65E /* DayLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34EAC9239BD4550052B65E /* DayLabel.m */; };
 		DB34EB3D239BD4550052B65E /* ORWInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34EACC239BD4550052B65E /* ORWInputTextView.m */; };
 		DB34EB3F239BD4850052B65E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB34EB3E239BD4850052B65E /* Main.storyboard */; };
+		EE7F780623E1EB4E009A3774 /* TestArrangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7F780523E1EB4E009A3774 /* TestArrangeViewController.m */; };
+		EE7F780B23E1F085009A3774 /* TestCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7F780A23E1F085009A3774 /* TestCardTableViewCell.m */; };
 		EE85033A23E0A485008120D1 /* buildCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85030823E0A484008120D1 /* buildCircleView.m */; };
 		EE85034C23E0A485008120D1 /* InstallBuildTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85032423E0A484008120D1 /* InstallBuildTableViewCell.m */; };
 		EE85034E23E0A485008120D1 /* InstallRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85032723E0A484008120D1 /* InstallRoomViewController.m */; };
@@ -597,6 +599,10 @@
 		DB34EACB239BD4550052B65E /* ORWInputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORWInputTextView.h; sourceTree = "<group>"; };
 		DB34EACC239BD4550052B65E /* ORWInputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORWInputTextView.m; sourceTree = "<group>"; };
 		DB34EB3E239BD4850052B65E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EE7F780423E1EB4E009A3774 /* TestArrangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestArrangeViewController.h; sourceTree = "<group>"; };
+		EE7F780523E1EB4E009A3774 /* TestArrangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestArrangeViewController.m; sourceTree = "<group>"; };
+		EE7F780923E1F085009A3774 /* TestCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCardTableViewCell.h; sourceTree = "<group>"; };
+		EE7F780A23E1F085009A3774 /* TestCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCardTableViewCell.m; sourceTree = "<group>"; };
 		EE85030823E0A484008120D1 /* buildCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buildCircleView.m; sourceTree = "<group>"; };
 		EE85030A23E0A484008120D1 /* buildCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buildCircleView.h; sourceTree = "<group>"; };
 		EE85032423E0A484008120D1 /* InstallBuildTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallBuildTableViewCell.m; sourceTree = "<group>"; };
@@ -1662,6 +1668,33 @@
 			path = InputTextView;
 			sourceTree = "<group>";
 		};
+		EE7F780323E1EB16009A3774 /* Discover_TestArrange */ = {
+			isa = PBXGroup;
+			children = (
+				EE7F780823E1F05D009A3774 /* View */,
+				EE7F780723E1F052009A3774 /* ViewController */,
+			);
+			path = Discover_TestArrange;
+			sourceTree = "<group>";
+		};
+		EE7F780723E1F052009A3774 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE7F780423E1EB4E009A3774 /* TestArrangeViewController.h */,
+				EE7F780523E1EB4E009A3774 /* TestArrangeViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EE7F780823E1F05D009A3774 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE7F780923E1F085009A3774 /* TestCardTableViewCell.h */,
+				EE7F780A23E1F085009A3774 /* TestCardTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EE8502FE23E0A484008120D1 /* ChooseBuildingFile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1692,6 +1725,7 @@
 		EEF311D223D8A6DC001ED02E /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				EE7F780323E1EB16009A3774 /* Discover_TestArrange */,
 				EEF311D323D8A6DC001ED02E /* Discover_MainPage */,
 				EEF311EC23D8A6DC001ED02E /* Discover_FindScheduleInquiry */,
 				EEF311F723D8A6DC001ED02E /* Discover_EmptyClass */,
@@ -2233,10 +2267,12 @@
 				EE85036923E14D7D008120D1 /* ClassmatesList.m in Sources */,
 				1A30F39723D05AB200FBBD83 /* IntegralStoreTransitionAnimator.m in Sources */,
 				1A141372235F524B0001417E /* NSDate+schoolDate.m in Sources */,
+				EE7F780623E1EB4E009A3774 /* TestArrangeViewController.m in Sources */,
 				1A46C34823DC6F58005DC1F3 /* MyResponseRecievedCell.m in Sources */,
 				1A5A5EDC23600C9100543BAE /* LoginViewController.m in Sources */,
 				1A30F39A23D09CD800FBBD83 /* IntegralStoreContentView.m in Sources */,
 				1ABE8026238D01EC00E88C4E /* CheckInViewController.m in Sources */,
+				EE7F780B23E1F085009A3774 /* TestCardTableViewCell.m in Sources */,
 				1A141373235F524B0001417E /* UIColor+Helper.m in Sources */,
 				1A16592023D85CD60039BA46 /* MineQAController.m in Sources */,
 				DB34EB36239BD4550052B65E /* ChooseButton.m in Sources */,

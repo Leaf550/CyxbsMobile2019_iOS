@@ -1,41 +1,33 @@
 //
-//  ChooseStudentListViewController.m
+//  TestArrangeViewController.m
 //  CyxbsMobile2019_iOS
 //
-//  Created by 千千 on 2020/1/29.
+//  Created by 千千 on 2020/1/30.
 //  Copyright © 2020 Redrock. All rights reserved.
 //
 
-#import "ChooseStudentListViewController.h"
-#import "PeopleListCellTableViewCell.h"
+#import "TestArrangeViewController.h"
+#import "TestCardTableViewCell.h"
 #define Color21_49_91_F0F0F2  [UIColor colorNamed:@"color21_49_91&#F0F0F2" inBundle:[NSBundle mainBundle] compatibleWithTraitCollection:nil]
-
-@interface ChooseStudentListViewController ()<UITableViewDelegate, UITableViewDataSource>
-
-@property (nonatomic, strong) ClassmatesList *classmatesList;
-@property (nonatomic, weak)UITableView *tableView;
+@interface TestArrangeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, weak)UIButton *backButton;
 @property (nonatomic, weak)UILabel *titleLabel;
 @end
 
-@implementation ChooseStudentListViewController
-- (instancetype)initWithClassmatesList:(ClassmatesList *)classmatesList {
-    if (self = [super init]) {
-        self.classmatesList = classmatesList;
-    }
-    return self;
-}
+@implementation TestArrangeViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@",self.classmatesList);
     [self addTableView];
     [self addBackButton];
     [self addTitleLabel];
     self.view.backgroundColor = UIColor.whiteColor;
+
     // Do any additional setup after loading the view.
 }
 - (void)addTableView {
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 87, self.view.width, self.view.height - 87) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(53, 160, self.view.width - 53 - 19, self.view.height - 87) style:UITableViewStylePlain];
     self.tableView = tableView;
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -62,7 +54,7 @@
 - (void)addTitleLabel {
     UILabel *label = [[UILabel alloc]init];
     self.titleLabel = label;
-    self.titleLabel.text = @"同学课表";
+    self.titleLabel.text = @"考试成绩";
     label.font = [UIFont fontWithName:PingFangSCBold size:21];
     label.textColor = Color21_49_91_F0F0F2;
     [self.view addSubview:label];
@@ -71,30 +63,22 @@
         make.centerY.equalTo(self.backButton);
     }];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    PeopleListCellTableViewCell *cell = [[PeopleListCellTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"PeopleListCell"];
-    cell.textLabel.text = self.classmatesList.classmatesArray[indexPath.row].name;
-    cell.detailTextLabel.text = self.classmatesList.classmatesArray[indexPath.row].major;
-    cell.stuNumLabel.text = self.classmatesList.classmatesArray[indexPath.row].stuNum;
+    TestCardTableViewCell *cell = [[TestCardTableViewCell alloc]init];
+    cell.backgroundColor = UIColor.yellowColor;
+    [self.view addSubview:cell];
     return cell;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 90;
-}
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.classmatesList.classmatesArray.count;
+    return 3;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 166;
 }
+
 @end

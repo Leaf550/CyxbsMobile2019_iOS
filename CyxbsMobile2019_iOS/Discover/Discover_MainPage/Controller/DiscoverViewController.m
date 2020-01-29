@@ -18,6 +18,7 @@
 #import "NotSetElectriceFeeButton.h"
 #import "NotSetVolunteerButton.h"
 #import "InstallRoomViewController.h"
+#import "ScheduleInquiryViewController.h"
 typedef NS_ENUM(NSUInteger, LoginStates) {
     DidntLogin,
     LoginTimeOut,
@@ -292,6 +293,8 @@ typedef NS_ENUM(NSUInteger, LoginStates) {
 
 - (void)touchSchedule {
     NSLog(@"点击了空课表");
+    ScheduleInquiryViewController *vc = [[ScheduleInquiryViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)touchMore {
