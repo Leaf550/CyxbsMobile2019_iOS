@@ -10,7 +10,6 @@
 #import "LoginViewController.h"
 #import "LQQFinderToolViewController.h"
 #import "LQQFinderView.h"
-#import "LQQGlanceView.h"
 #import "EmptyClassViewController.h"
 #import "ElectricFeeModel.h"
 #import "OneNewsModel.h"
@@ -35,7 +34,6 @@ typedef NS_ENUM(NSUInteger, LoginStates) {
 @property (nonatomic, weak) VolunteerGlanceView *volGlanceView;//志愿服务button页面
 @property (nonatomic, weak) NotSetElectriceFeeButton *eleButton;//未绑定账号时电费button页面
 @property (nonatomic, weak) NotSetVolunteerButton *volButton;//未绑定账号时电费button页面
-@property (nonatomic, weak) LQQGlanceView *glanceView;//下方剩余页面
 //Model
 @property ElectricFeeModel *elecModel;
 @property OneNewsModel *oneNewsModel;
@@ -247,9 +245,10 @@ typedef NS_ENUM(NSUInteger, LoginStates) {
 }
 
 - (void)updateElectricFeeUI {
-    self.glanceView.electricFeeMoney.text = self.elecModel.electricFeeItem.money;
-    self.glanceView.electricFeeDegree.text = self.elecModel.electricFeeItem.degree;
-    self.glanceView.electricFeeTime.text = self.elecModel.electricFeeItem.time;
+    
+    self.eleGlanceView.electricFeeMoney.text = self.elecModel.electricFeeItem.money;
+    self.eleGlanceView.electricFeeDegree.text = self.elecModel.electricFeeItem.degree;
+    self.eleGlanceView.electricFeeTime.text = self.elecModel.electricFeeItem.time;
     //同时写入缓存
     [self.defaults setObject:self.elecModel.electricFeeItem.money forKey:@"ElectricFee_money"];
     [self.defaults setObject:self.elecModel.electricFeeItem.degree forKey:@"ElectricFee_degree"];

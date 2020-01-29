@@ -217,6 +217,11 @@
 		EE85035623E0A4B9008120D1 /* electricity_header_setting.gif in Resources */ = {isa = PBXBuildFile; fileRef = EE85035523E0A4B9008120D1 /* electricity_header_setting.gif */; };
 		EE85035923E0A80C008120D1 /* SetBuilding.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE85035823E0A80C008120D1 /* SetBuilding.xcassets */; };
 		EE85035B23E0AF28008120D1 /* README in Resources */ = {isa = PBXBuildFile; fileRef = EE85035A23E0AF28008120D1 /* README */; };
+		EE85035E23E148E0008120D1 /* ChooseStudentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85035D23E148E0008120D1 /* ChooseStudentListViewController.m */; };
+		EE85036823E14D7D008120D1 /* ClassmateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85036523E14D7D008120D1 /* ClassmateItem.m */; };
+		EE85036923E14D7D008120D1 /* ClassmatesList.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85036623E14D7D008120D1 /* ClassmatesList.m */; };
+		EE85036C23E189C0008120D1 /* PeopleListCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85036B23E189C0008120D1 /* PeopleListCellTableViewCell.m */; };
+		EE85036E23E19FEE008120D1 /* FindScheduleInquiry.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE85036D23E19FED008120D1 /* FindScheduleInquiry.xcassets */; };
 		EE899DEA2367DB2600DDB0D9 /* Bahnschrift.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE899DDE2367D89900DDB0D9 /* Bahnschrift.ttf */; };
 		EE8BD94323E014E5003E7241 /* ElectricFeeGlanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8BD94223E014E5003E7241 /* ElectricFeeGlanceView.m */; };
 		EE8BD94623E018C9003E7241 /* VolunteerGlanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8BD94523E018C9003E7241 /* VolunteerGlanceView.m */; };
@@ -230,7 +235,6 @@
 		EEF3121023D8A6DC001ED02E /* VolunteerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF311E323D8A6DC001ED02E /* VolunteerModel.m */; };
 		EEF3121123D8A6DC001ED02E /* EnterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF311E623D8A6DC001ED02E /* EnterButton.m */; };
 		EEF3121223D8A6DC001ED02E /* LQQFinderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF311E723D8A6DC001ED02E /* LQQFinderView.m */; };
-		EEF3121323D8A6DC001ED02E /* LQQGlanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF311E823D8A6DC001ED02E /* LQQGlanceView.m */; };
 		EEF3121423D8A6DC001ED02E /* StudentScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF311EE23D8A6DC001ED02E /* StudentScheduleViewController.m */; };
 		EEF3121523D8A6DC001ED02E /* ScheduleInquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF311F223D8A6DC001ED02E /* ScheduleInquiryViewController.m */; };
 		EEF3121623D8A6DC001ED02E /* TeacherScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF311F323D8A6DC001ED02E /* TeacherScheduleViewController.m */; };
@@ -602,6 +606,15 @@
 		EE85035523E0A4B9008120D1 /* electricity_header_setting.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = electricity_header_setting.gif; sourceTree = "<group>"; };
 		EE85035823E0A80C008120D1 /* SetBuilding.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SetBuilding.xcassets; sourceTree = "<group>"; };
 		EE85035A23E0AF28008120D1 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		EE85035C23E148E0008120D1 /* ChooseStudentListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseStudentListViewController.h; sourceTree = "<group>"; };
+		EE85035D23E148E0008120D1 /* ChooseStudentListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseStudentListViewController.m; sourceTree = "<group>"; };
+		EE85036423E14D7D008120D1 /* ClassmatesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassmatesList.h; sourceTree = "<group>"; };
+		EE85036523E14D7D008120D1 /* ClassmateItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassmateItem.m; sourceTree = "<group>"; };
+		EE85036623E14D7D008120D1 /* ClassmatesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassmatesList.m; sourceTree = "<group>"; };
+		EE85036723E14D7D008120D1 /* ClassmateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassmateItem.h; sourceTree = "<group>"; };
+		EE85036A23E189C0008120D1 /* PeopleListCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeopleListCellTableViewCell.h; sourceTree = "<group>"; };
+		EE85036B23E189C0008120D1 /* PeopleListCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeopleListCellTableViewCell.m; sourceTree = "<group>"; };
+		EE85036D23E19FED008120D1 /* FindScheduleInquiry.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FindScheduleInquiry.xcassets; sourceTree = "<group>"; };
 		EE899DDE2367D89900DDB0D9 /* Bahnschrift.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bahnschrift.ttf; sourceTree = "<group>"; };
 		EE8BD94123E014E5003E7241 /* ElectricFeeGlanceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElectricFeeGlanceView.h; sourceTree = "<group>"; };
 		EE8BD94223E014E5003E7241 /* ElectricFeeGlanceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElectricFeeGlanceView.m; sourceTree = "<group>"; };
@@ -625,10 +638,8 @@
 		EEF311E423D8A6DC001ED02E /* VolunteerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolunteerModel.h; sourceTree = "<group>"; };
 		EEF311E623D8A6DC001ED02E /* EnterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterButton.m; sourceTree = "<group>"; };
 		EEF311E723D8A6DC001ED02E /* LQQFinderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQQFinderView.m; sourceTree = "<group>"; };
-		EEF311E823D8A6DC001ED02E /* LQQGlanceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQQGlanceView.m; sourceTree = "<group>"; };
 		EEF311E923D8A6DC001ED02E /* LQQFinderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQQFinderView.h; sourceTree = "<group>"; };
 		EEF311EA23D8A6DC001ED02E /* EnterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterButton.h; sourceTree = "<group>"; };
-		EEF311EB23D8A6DC001ED02E /* LQQGlanceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQQGlanceView.h; sourceTree = "<group>"; };
 		EEF311EE23D8A6DC001ED02E /* StudentScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentScheduleViewController.m; sourceTree = "<group>"; };
 		EEF311EF23D8A6DC001ED02E /* ScheduleInquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleInquiryViewController.h; sourceTree = "<group>"; };
 		EEF311F023D8A6DC001ED02E /* TeacherScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherScheduleViewController.h; sourceTree = "<group>"; };
@@ -1288,8 +1299,8 @@
 		D026A7FD23D4E054001A4774 /* QAListSegmentView */ = {
 			isa = PBXGroup;
 			children = (
-				D026A7FE23D4E054001A4774 /* QAListSegmentView.m */,
 				D026A7FF23D4E054001A4774 /* QAListSegmentView.h */,
+				D026A7FE23D4E054001A4774 /* QAListSegmentView.m */,
 			);
 			path = QAListSegmentView;
 			sourceTree = "<group>";
@@ -1667,6 +1678,17 @@
 			path = ChooseBuildingFile;
 			sourceTree = "<group>";
 		};
+		EE85036323E14D7D008120D1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				EE85036423E14D7D008120D1 /* ClassmatesList.h */,
+				EE85036523E14D7D008120D1 /* ClassmateItem.m */,
+				EE85036623E14D7D008120D1 /* ClassmatesList.m */,
+				EE85036723E14D7D008120D1 /* ClassmateItem.h */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		EEF311D223D8A6DC001ED02E /* Discover */ = {
 			isa = PBXGroup;
 			children = (
@@ -1723,10 +1745,10 @@
 		EEF311DD23D8A6DC001ED02E /* News */ = {
 			isa = PBXGroup;
 			children = (
-				EEF311DE23D8A6DC001ED02E /* OneNewsModel.h */,
 				EEF311DF23D8A6DC001ED02E /* OneNewsItem.h */,
-				EEF311E023D8A6DC001ED02E /* OneNewsModel.m */,
 				EEF311E123D8A6DC001ED02E /* OneNewsItem.m */,
+				EEF311DE23D8A6DC001ED02E /* OneNewsModel.h */,
+				EEF311E023D8A6DC001ED02E /* OneNewsModel.m */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -1734,8 +1756,8 @@
 		EEF311E223D8A6DC001ED02E /* Volunteer */ = {
 			isa = PBXGroup;
 			children = (
-				EEF311E323D8A6DC001ED02E /* VolunteerModel.m */,
 				EEF311E423D8A6DC001ED02E /* VolunteerModel.h */,
+				EEF311E323D8A6DC001ED02E /* VolunteerModel.m */,
 			);
 			path = Volunteer;
 			sourceTree = "<group>";
@@ -1746,8 +1768,6 @@
 				EEF311E623D8A6DC001ED02E /* EnterButton.m */,
 				EEF311E923D8A6DC001ED02E /* LQQFinderView.h */,
 				EEF311E723D8A6DC001ED02E /* LQQFinderView.m */,
-				EEF311EB23D8A6DC001ED02E /* LQQGlanceView.h */,
-				EEF311E823D8A6DC001ED02E /* LQQGlanceView.m */,
 				EEF311EA23D8A6DC001ED02E /* EnterButton.h */,
 				EE8BD94123E014E5003E7241 /* ElectricFeeGlanceView.h */,
 				EE8BD94223E014E5003E7241 /* ElectricFeeGlanceView.m */,
@@ -1757,6 +1777,8 @@
 				EE8BD94523E018C9003E7241 /* VolunteerGlanceView.m */,
 				EE8BD94A23E024A5003E7241 /* NotSetVolunteerButton.h */,
 				EE8BD94B23E024A5003E7241 /* NotSetVolunteerButton.m */,
+				EE85036A23E189C0008120D1 /* PeopleListCellTableViewCell.h */,
+				EE85036B23E189C0008120D1 /* PeopleListCellTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1764,8 +1786,10 @@
 		EEF311EC23D8A6DC001ED02E /* Discover_FindScheduleInquiry */ = {
 			isa = PBXGroup;
 			children = (
+				EE85036323E14D7D008120D1 /* model */,
 				EEF311ED23D8A6DC001ED02E /* Controller */,
 				EEF311F423D8A6DC001ED02E /* View */,
+				EE85036D23E19FED008120D1 /* FindScheduleInquiry.xcassets */,
 			);
 			path = Discover_FindScheduleInquiry;
 			sourceTree = "<group>";
@@ -1773,12 +1797,14 @@
 		EEF311ED23D8A6DC001ED02E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EEF311EE23D8A6DC001ED02E /* StudentScheduleViewController.m */,
 				EEF311EF23D8A6DC001ED02E /* ScheduleInquiryViewController.h */,
-				EEF311F023D8A6DC001ED02E /* TeacherScheduleViewController.h */,
-				EEF311F123D8A6DC001ED02E /* StudentScheduleViewController.h */,
 				EEF311F223D8A6DC001ED02E /* ScheduleInquiryViewController.m */,
+				EEF311F123D8A6DC001ED02E /* StudentScheduleViewController.h */,
+				EEF311EE23D8A6DC001ED02E /* StudentScheduleViewController.m */,
+				EEF311F023D8A6DC001ED02E /* TeacherScheduleViewController.h */,
 				EEF311F323D8A6DC001ED02E /* TeacherScheduleViewController.m */,
+				EE85035C23E148E0008120D1 /* ChooseStudentListViewController.h */,
+				EE85035D23E148E0008120D1 /* ChooseStudentListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1786,8 +1812,8 @@
 		EEF311F423D8A6DC001ED02E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EEF311F523D8A6DC001ED02E /* HistoryView.m */,
 				EEF311F623D8A6DC001ED02E /* HistoryView.h */,
+				EEF311F523D8A6DC001ED02E /* HistoryView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1824,8 +1850,8 @@
 			isa = PBXGroup;
 			children = (
 				EEF311FF23D8A6DC001ED02E /* StoreyResultView.h */,
-				EEF3120023D8A6DC001ED02E /* LQButton.h */,
 				EEF3120123D8A6DC001ED02E /* StoreyResultView.m */,
+				EEF3120023D8A6DC001ED02E /* LQButton.h */,
 				EEF3120223D8A6DC001ED02E /* LQButton.m */,
 			);
 			path = View;
@@ -2006,6 +2032,7 @@
 				DB34EB1B239BD4550052B65E /* 删除@3x.png in Resources */,
 				DB34EAF1239BD4550052B65E /* 椭圆@3x.png in Resources */,
 				DB34EAE8239BD4550052B65E /* 多课1@2x.png in Resources */,
+				EE85036E23E19FEE008120D1 /* FindScheduleInquiry.xcassets in Resources */,
 				DB34EAE3239BD4550052B65E /* 书@2x.png in Resources */,
 				DB34EAF3239BD4550052B65E /* courseMengbi.jpg in Resources */,
 				DB34EB14239BD4550052B65E /* 无事项@2x.png in Resources */,
@@ -2134,10 +2161,10 @@
 				D026A80723D4E054001A4774 /* QAQuestionsViewController.m in Sources */,
 				1A9B767A235F50A800725937 /* main.m in Sources */,
 				D03E59B423D9D8BE00E0F34D /* QAAnswerViewController.m in Sources */,
+				EE85035E23E148E0008120D1 /* ChooseStudentListViewController.m in Sources */,
 				EE85034C23E0A485008120D1 /* InstallBuildTableViewCell.m in Sources */,
 				1A141377235F524B0001417E /* SYCSegmentViewButton.m in Sources */,
 				DB34EB39239BD4550052B65E /* TimeChooseScrollView.m in Sources */,
-				EEF3121323D8A6DC001ED02E /* LQQGlanceView.m in Sources */,
 				1A30F3AD23D33F1300FBBD83 /* CheckInModel.m in Sources */,
 				DB34EB31239BD4550052B65E /* RemindMatter.m in Sources */,
 				DB34EB34239BD4550052B65E /* LessonButton.m in Sources */,
@@ -2148,6 +2175,7 @@
 				DB34EB28239BD4550052B65E /* DetailLessonController.m in Sources */,
 				EEF3121A23D8A6DC001ED02E /* StoreyResultView.m in Sources */,
 				1A5A5EF12361A82E00543BAE /* UserItemTool.m in Sources */,
+				EE85036C23E189C0008120D1 /* PeopleListCellTableViewCell.m in Sources */,
 				1A46C34223DC6CE2005DC1F3 /* MyAnswerDraftCell.m in Sources */,
 				1A30F39D23D0B86400FBBD83 /* IntegralStorePercentDrivenController.m in Sources */,
 				DB34EAD7239BD4550052B65E /* WYCClassBookView.m in Sources */,
@@ -2171,6 +2199,7 @@
 				1A30F3FF23D4910900FBBD83 /* IntegralStorePresenter.m in Sources */,
 				D026A80523D4E054001A4774 /* QAListViewController.m in Sources */,
 				1A141321235F521C0001417E /* BaseViewController.m in Sources */,
+				EE85036823E14D7D008120D1 /* ClassmateItem.m in Sources */,
 				DB34EAD6239BD4550052B65E /* WMTWeekChooseBar.m in Sources */,
 				EEF3121823D8A6DC001ED02E /* EmptyClassViewController.m in Sources */,
 				DB34EB30239BD4550052B65E /* LessonMatter.m in Sources */,
@@ -2201,6 +2230,7 @@
 				1AAFACF8236B360F00E854A3 /* MinePresenter.m in Sources */,
 				DB34EB32239BD4550052B65E /* LessonNumLabel.m in Sources */,
 				1A30F39423D057D000FBBD83 /* IntegralStoreViewController.m in Sources */,
+				EE85036923E14D7D008120D1 /* ClassmatesList.m in Sources */,
 				1A30F39723D05AB200FBBD83 /* IntegralStoreTransitionAnimator.m in Sources */,
 				1A141372235F524B0001417E /* NSDate+schoolDate.m in Sources */,
 				1A46C34823DC6F58005DC1F3 /* MyResponseRecievedCell.m in Sources */,
