@@ -181,6 +181,8 @@
 #define ELECTRICFEE @"https://cyxbsmobile.redrock.team/MagicLoop/index.php?s=/addon/ElectricityQuery/ElectricityQuery/queryElecByRoom"
 /// 同学课表之查找同学
 #define SEARCHPEOPLEAPI @"https://cyxbsmobile.redrock.team/cyxbsMobile/index.php/home/searchPeople/peoplelist"
+//考试安排接口
+#define EXAMARRANGEAPI @"https://cyxbsmobile.redrock.team/api/examSchedule"
 
 /// 教务新闻列表
 #define NEWSLIST @"https://cyxbsmobile.redrock.team/234/newapi/jwNews/list"

@@ -8,6 +8,7 @@
 
 #import "TestCardTableViewCell.h"
 #define Color21_49_91_F0F0F2  [UIColor colorNamed:@"color21_49_91&#F0F0F2" inBundle:[NSBundle mainBundle] compatibleWithTraitCollection:nil]
+#define color242_243_248toFFFFFF [UIColor colorNamed:@"color242_243_248&#FFFFFF" inBundle:[NSBundle mainBundle] compatibleWithTraitCollection:nil]
 
 @implementation TestCardTableViewCell
 
@@ -19,6 +20,7 @@
 {
     self = [super init];
     if (self) {
+        self.backgroundColor = color242_243_248toFFFFFF;
         [self addWeekTimeLabel];
         [self addLeftDayLabel];
         [self addBottomView];

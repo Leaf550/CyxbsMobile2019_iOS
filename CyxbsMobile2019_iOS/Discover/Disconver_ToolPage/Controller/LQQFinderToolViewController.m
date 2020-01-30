@@ -40,6 +40,7 @@
 
 - (void)addContentView {
     UIScrollView *contentView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
+    self.contentView.delegate = self;
     if(@available(iOS 11.0, *)){
         CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
         contentView.frame = CGRectMake(0,self.navigationController.navigationBar.height + statusBarFrame.size.height, self.view.width, self.view.height);
@@ -55,7 +56,6 @@
     [self.view addSubview:contentView];
 }
 - (void)configNavigationBar {
-    self.contentView.delegate = self;
     self.navigationController.navigationBar.topItem.title = @"";
     self.title = @"工具";
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:176/255.0 green:189/255.0 blue:215/255.0 alpha:1];
