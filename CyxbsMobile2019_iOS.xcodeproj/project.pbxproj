@@ -100,6 +100,7 @@
 		D03E59D323DB30AA00E0F34D /* QAAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03E59D023DB30A900E0F34D /* QAAskViewController.m */; };
 		D03E59D723DB30D100E0F34D /* QAAnswerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D03E59D623DB30D100E0F34D /* QAAnswerModel.m */; };
 		D069799023D737800007E479 /* QADetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D069798F23D737800007E479 /* QADetailModel.m */; };
+		D0AA00C223E46AF30006A50D /* QAAskNextStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AA00C123E46AF30006A50D /* QAAskNextStepView.xib */; };
 		DB34EACD239BD4550052B65E /* WYCClassBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34EA2B239BD4540052B65E /* WYCClassBookViewController.m */; };
 		DB34EACE239BD4550052B65E /* DateModle.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34EA2D239BD4540052B65E /* DateModle.m */; };
 		DB34EACF239BD4550052B65E /* WYCClassAndRemindDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34EA2E239BD4540052B65E /* WYCClassAndRemindDataModel.m */; };
@@ -450,6 +451,7 @@
 		D03E59D623DB30D100E0F34D /* QAAnswerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAAnswerModel.m; sourceTree = "<group>"; };
 		D069798E23D737800007E479 /* QADetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QADetailModel.h; sourceTree = "<group>"; };
 		D069798F23D737800007E479 /* QADetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QADetailModel.m; sourceTree = "<group>"; };
+		D0AA00C123E46AF30006A50D /* QAAskNextStepView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QAAskNextStepView.xib; sourceTree = "<group>"; };
 		DB34EA2A239BD4540052B65E /* WYCClassBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCClassBookViewController.h; sourceTree = "<group>"; };
 		DB34EA2B239BD4540052B65E /* WYCClassBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCClassBookViewController.m; sourceTree = "<group>"; };
 		DB34EA2D239BD4540052B65E /* DateModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateModle.m; sourceTree = "<group>"; };
@@ -1372,8 +1374,9 @@
 		D03E59CD23DB30A900E0F34D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D03E59CE23DB30A900E0F34D /* QAAskNextStepView.m */,
 				D03E59CF23DB30A900E0F34D /* QAAskNextStepView.h */,
+				D03E59CE23DB30A900E0F34D /* QAAskNextStepView.m */,
+				D0AA00C123E46AF30006A50D /* QAAskNextStepView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2004,6 +2007,7 @@
 				DB34EB0A239BD4550052B65E /* remind_image_title@3x.png in Resources */,
 				1A9B7677235F50A800725937 /* LaunchScreen.storyboard in Resources */,
 				DB34EAEB239BD4550052B65E /* 时间@3x.png in Resources */,
+				D0AA00C223E46AF30006A50D /* QAAskNextStepView.xib in Resources */,
 				DB34EAD1239BD4550052B65E /* WYCClassBookView.xib in Resources */,
 				DB34EADC239BD4550052B65E /* remind2@2x.png in Resources */,
 				DB34EB1F239BD4550052B65E /* DetailLessonController.xib in Resources */,
