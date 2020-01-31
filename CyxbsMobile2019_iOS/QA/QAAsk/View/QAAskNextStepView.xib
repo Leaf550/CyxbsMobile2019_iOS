@@ -12,12 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QAAskNextStepView">
             <connections>
-                <outlet property="PickerVIew" destination="Ycm-aI-jpc" id="Qky-dN-EHL"/>
                 <outlet property="cancelBtn" destination="FC4-qa-0HO" id="oQQ-zH-6oX"/>
                 <outlet property="commitBtn" destination="BtE-2l-T9X" id="uGy-7o-iLO"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="ENh-nV-fzW"/>
                 <outlet property="integralNumLabel" destination="gch-oB-gzT" id="4FT-4Q-SpY"/>
+                <outlet property="integralPickView" destination="480-MO-JwV" id="moW-Zr-Ant"/>
                 <outlet property="timeLabel" destination="GrK-tz-Seo" id="KD2-1Z-sXh"/>
+                <outlet property="timePickerVIew" destination="Ycm-aI-jpc" id="hij-R7-evj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -95,12 +96,18 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="480-MO-JwV">
+                    <rect key="frame" x="0.0" y="355" width="414" height="105"/>
+                    <color key="backgroundColor" red="1" green="0.38790915929999997" blue="0.27881152770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="GrK-tz-Seo" firstAttribute="centerY" secondItem="P1i-Mh-Ia9" secondAttribute="centerY" id="3GG-gB-Hg7"/>
+                <constraint firstItem="BtE-2l-T9X" firstAttribute="top" secondItem="480-MO-JwV" secondAttribute="bottom" constant="10" id="6qe-d1-I7K"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gch-oB-gzT" secondAttribute="trailing" constant="16" id="9au-cD-ycY"/>
                 <constraint firstItem="P1i-Mh-Ia9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="80" id="9av-cr-gfJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="480-MO-JwV" secondAttribute="trailing" id="CI0-8l-uv0"/>
                 <constraint firstItem="P1i-Mh-Ia9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Gzb-v0-5QZ"/>
                 <constraint firstItem="1Gi-Y0-zV2" firstAttribute="centerY" secondItem="FC4-qa-0HO" secondAttribute="centerY" id="I0k-e5-4qE"/>
                 <constraint firstItem="YXF-Fq-RG3" firstAttribute="top" secondItem="P1i-Mh-Ia9" secondAttribute="bottom" constant="170" id="MOe-Mx-XlH"/>
@@ -110,8 +117,10 @@
                 <constraint firstItem="BtE-2l-T9X" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="dCZ-9e-th9"/>
                 <constraint firstItem="1Gi-Y0-zV2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="fuu-V3-IEc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FC4-qa-0HO" secondAttribute="trailing" constant="16" id="ge0-zq-BKO"/>
+                <constraint firstItem="480-MO-JwV" firstAttribute="top" secondItem="YXF-Fq-RG3" secondAttribute="bottom" constant="10" id="iBz-OK-3Vm"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GrK-tz-Seo" secondAttribute="trailing" constant="16" id="nL5-TV-00J"/>
                 <constraint firstItem="YXF-Fq-RG3" firstAttribute="leading" secondItem="P1i-Mh-Ia9" secondAttribute="leading" id="pga-ve-wbV"/>
+                <constraint firstItem="480-MO-JwV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rCb-NN-gxQ"/>
                 <constraint firstItem="BtE-2l-T9X" firstAttribute="top" secondItem="YXF-Fq-RG3" secondAttribute="bottom" constant="125" id="t8S-sR-SK6"/>
                 <constraint firstItem="gch-oB-gzT" firstAttribute="centerY" secondItem="YXF-Fq-RG3" secondAttribute="centerY" id="z9b-Qa-IhP"/>
             </constraints>

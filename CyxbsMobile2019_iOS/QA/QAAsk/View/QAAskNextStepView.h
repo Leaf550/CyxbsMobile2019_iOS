@@ -14,11 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)setupView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
-@property (weak, nonatomic) IBOutlet UIPickerView *PickerVIew;
+@property (weak, nonatomic) IBOutlet UIPickerView *timePickerVIew;
+@property (weak, nonatomic) IBOutlet UIView *integralPickView;
 @property (weak, nonatomic) IBOutlet UILabel *integralNumLabel;
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIButton *commitBtn;
-@property(strong,nonatomic)NSMutableArray *pickViewContent;
+@property(strong,nonatomic)NSMutableArray *timePickViewContent;
 @property(copy,nonatomic)NSString *day;
 @property(copy,nonatomic)NSString *hour;
 @property(copy,nonatomic)NSString *minutes;

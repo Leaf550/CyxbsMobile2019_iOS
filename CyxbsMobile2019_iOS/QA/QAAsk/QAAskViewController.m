@@ -14,6 +14,7 @@
 @property(strong,nonatomic)UITextView *askTextView;
 @property(strong,nonatomic)NSMutableArray *askImageArray;
 @property(strong,nonatomic)QAAskModel *model;
+@property(strong,nonatomic)QAAskNextStepView *nextStepView;
 @end
 
 @implementation QAAskViewController
@@ -280,39 +281,40 @@
 }
 -(void)nextStep{
     
-        if ([[UIApplication sharedApplication].keyWindow viewWithTag:999]) {
-            [[[UIApplication sharedApplication].keyWindow viewWithTag:999] removeFromSuperview];
-        }
-        //初始化全屏view
-        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        view.backgroundColor = [UIColor colorWithHexString:@"#DCDDE3"];
-        //设置view的tag
-        view.tag = 999;
-        UIView *backView = [[UIView alloc]init];
-        [backView setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-//        backView.alpha = 0;
-        //添加点击手势
-        UIGestureRecognizer *hiddenNextStepView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenNextStepView)];
-        [backView addGestureRecognizer:hiddenNextStepView];
-        [view addSubview:backView];
-
-        QAAskNextStepView *nextStepView = [[QAAskNextStepView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 550)];
-    [nextStepView.cancelBtn addTarget:self action:@selector(hiddenNextStepView) forControlEvents:UIControlEventTouchUpInside];
-        nextStepView.userInteractionEnabled = YES;
-        nextStepView.alpha = 1;
-        [view addSubview:nextStepView];
-
-        //显示全屏view
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        [window addSubview:view];
-        CGRect frame = CGRectMake(0, SCREEN_HEIGHT - 530, SCREEN_WIDTH, 550);
-        [UIView animateWithDuration:0.5f delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
-            nextStepView.frame = frame;
-            [backView setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 530)];
-        } completion:nil];
+    if ([[UIApplication sharedApplication].keyWindow viewWithTag:999]) {
+        [[[UIApplication sharedApplication].keyWindow viewWithTag:999] removeFromSuperview];
+    }
+    //初始化全屏view
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    view.backgroundColor = [UIColor colorWithHexString:@"#DCDDE3"];
+    //设置view的tag
+    view.tag = 999;
+    UIView *backView = [[UIView alloc]init];
+    [backView setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    //        backView.alpha = 0;
+    //添加点击手势
+    UIGestureRecognizer *hiddenNextStepView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenNextStepView)];
+    [backView addGestureRecognizer:hiddenNextStepView];
+    [view addSubview:backView];
     
-
-
+    self.nextStepView = [[QAAskNextStepView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 550)];
+    [self.nextStepView.cancelBtn addTarget:self action:@selector(hiddenNextStepView) forControlEvents:UIControlEventTouchUpInside];
+    [self.nextStepView.commitBtn addTarget:self action:@selector(commitAsk) forControlEvents:UIControlEventTouchUpInside];
+    self.nextStepView.userInteractionEnabled = YES;
+    self.nextStepView.alpha = 1;
+    [view addSubview:self.nextStepView];
+    
+    //显示全屏view
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:view];
+    CGRect frame = CGRectMake(0, SCREEN_HEIGHT - 530, SCREEN_WIDTH, 550);
+    [UIView animateWithDuration:0.5f delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.nextStepView.frame = frame;
+        [backView setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 530)];
+    } completion:nil];
+    
+    
+    
 }
 -(void)hiddenNextStepView{
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
@@ -325,9 +327,8 @@
 }
 
 -(void)commitAsk{
+    
     //    self.model = [[QAAskModel alloc]init];
-    ////    [self.model commitAsk:self.questionId content:self.askTextView.text];
-    //    //    NSLog(@"%@",self.askTextView.text);
-    //    [self.navigationController popViewControllerAnimated:YES];
+
 }
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "QAAskNextStepView.h"
-
+#import "QAAskIntegralPickerView.h"
 @implementation QAAskNextStepView
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -22,10 +22,6 @@
 }
 
 
--(void)layoutSubviews{
-    NSString *xx = self.timeLabel.text;
-    NSLog(@"%@",xx);
-}
 -(void)setupView{
     self.alpha = 1.0;
     self.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
@@ -40,6 +36,9 @@
     [self.timeLabel setTextColor:[UIColor colorWithHexString:@"#29D1F1"]];
     
     self.commitBtn.layer.cornerRadius = 20;
+    
+    QAAskIntegralPickerView *view = [[QAAskIntegralPickerView alloc]initWithFrame:CGRectMake(0, 0, self.integralPickView.frame.size.width, self.integralPickView.frame.size.height)];
+    [self.integralPickView addSubview:view];
     
    NSDate *date = [NSDate date];
 //如果没有规定formatter的时区，那么formatter默认的就是当前时区
@@ -60,7 +59,7 @@
     NSString *nowDateString = [formatter stringFromDate:date];
     [self.timeLabel setText:nowDateString];
     
-    self.pickViewContent = [NSMutableArray array];
+    self.timePickViewContent = [NSMutableArray array];
     NSMutableArray *dayArray = [NSMutableArray array];
     [formatter setDateFormat:@"MM-dd"];
     // 使用formatter转换后的date字符串变成了当前时区的时间
@@ -75,21 +74,21 @@
         [dayArray addObject:dateString];
 
     }
-    [self.pickViewContent addObject:dayArray];
+    [self.timePickViewContent addObject:dayArray];
     
     NSMutableArray *hourArray = [NSMutableArray array];
     for (int i = 0; i < 24; i++) {
         NSString *hourString = [NSString stringWithFormat:@"%d时",i];
         [hourArray addObject:hourString];
     }
-    [self.pickViewContent addObject:hourArray];
+    [self.timePickViewContent addObject:hourArray];
     
     NSMutableArray *minutesArray = [NSMutableArray array];
     for (int i = 0; i < 60; i++) {
         NSString *minutesString = [NSString stringWithFormat:@"%d分",i];
         [minutesArray addObject:minutesString];
     }
-    [self.pickViewContent addObject:minutesArray];
+    [self.timePickViewContent addObject:minutesArray];
 }
 #pragma mark - UIPickerViewDelegate
 #pragma mark 列
@@ -98,7 +97,7 @@
 }
 #pragma mark 每列多少行
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    NSArray *arr = self.pickViewContent[component];
+    NSArray *arr = self.timePickViewContent[component];
     return arr.count;
 }
 
@@ -107,7 +106,7 @@
     if (component==0&&row==0) {
         return @"今天";
     }else{
-        return self.pickViewContent[component][row];
+        return self.timePickViewContent[component][row];
     }
 }
 #pragma mark pickerView每列宽度
@@ -121,11 +120,11 @@
 #pragma mark pickerView滚动方法
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     if (component == 0) {
-        self.day = self.pickViewContent[component][row];
+        self.day = self.timePickViewContent[component][row];
     }else if(component == 1){
-        self.hour = self.pickViewContent[component][row];
+        self.hour = self.timePickViewContent[component][row];
     }else{
-        self.minutes = self.pickViewContent[component][row];
+        self.minutes = self.timePickViewContent[component][row];
     }
     NSString *year = [self.timeLabel.text substringWithRange:NSMakeRange(0, 5)];
     NSString *nowDateString = [NSString stringWithFormat:@"%@%@%@%@",year,self.day,self.hour,self.minutes];

@@ -101,6 +101,8 @@
 		D03E59D723DB30D100E0F34D /* QAAnswerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D03E59D623DB30D100E0F34D /* QAAnswerModel.m */; };
 		D069799023D737800007E479 /* QADetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D069798F23D737800007E479 /* QADetailModel.m */; };
 		D0AA00C223E46AF30006A50D /* QAAskNextStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AA00C123E46AF30006A50D /* QAAskNextStepView.xib */; };
+		D0AA00C523E4D1150006A50D /* QAAskIntegralPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA00C423E4D1150006A50D /* QAAskIntegralPickerView.m */; };
+		D0AA00C723E4D1200006A50D /* QAAskIntegralPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AA00C623E4D1200006A50D /* QAAskIntegralPickerView.xib */; };
 		DB34EACD239BD4550052B65E /* WYCClassBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34EA2B239BD4540052B65E /* WYCClassBookViewController.m */; };
 		DB34EACE239BD4550052B65E /* DateModle.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34EA2D239BD4540052B65E /* DateModle.m */; };
 		DB34EACF239BD4550052B65E /* WYCClassAndRemindDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34EA2E239BD4540052B65E /* WYCClassAndRemindDataModel.m */; };
@@ -452,6 +454,9 @@
 		D069798E23D737800007E479 /* QADetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QADetailModel.h; sourceTree = "<group>"; };
 		D069798F23D737800007E479 /* QADetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QADetailModel.m; sourceTree = "<group>"; };
 		D0AA00C123E46AF30006A50D /* QAAskNextStepView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QAAskNextStepView.xib; sourceTree = "<group>"; };
+		D0AA00C323E4D1150006A50D /* QAAskIntegralPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QAAskIntegralPickerView.h; sourceTree = "<group>"; };
+		D0AA00C423E4D1150006A50D /* QAAskIntegralPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QAAskIntegralPickerView.m; sourceTree = "<group>"; };
+		D0AA00C623E4D1200006A50D /* QAAskIntegralPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QAAskIntegralPickerView.xib; sourceTree = "<group>"; };
 		DB34EA2A239BD4540052B65E /* WYCClassBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCClassBookViewController.h; sourceTree = "<group>"; };
 		DB34EA2B239BD4540052B65E /* WYCClassBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCClassBookViewController.m; sourceTree = "<group>"; };
 		DB34EA2D239BD4540052B65E /* DateModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateModle.m; sourceTree = "<group>"; };
@@ -1377,6 +1382,9 @@
 				D03E59CF23DB30A900E0F34D /* QAAskNextStepView.h */,
 				D03E59CE23DB30A900E0F34D /* QAAskNextStepView.m */,
 				D0AA00C123E46AF30006A50D /* QAAskNextStepView.xib */,
+				D0AA00C323E4D1150006A50D /* QAAskIntegralPickerView.h */,
+				D0AA00C423E4D1150006A50D /* QAAskIntegralPickerView.m */,
+				D0AA00C623E4D1200006A50D /* QAAskIntegralPickerView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2031,6 +2039,7 @@
 				DB34EB1D239BD4550052B65E /* remind@3x.png in Resources */,
 				DB34EAE5239BD4550052B65E /* 老师@2x.png in Resources */,
 				D026A81023D4F7D0001A4774 /* QAListTableViewCell.xib in Resources */,
+				D0AA00C723E4D1200006A50D /* QAAskIntegralPickerView.xib in Resources */,
 				DB34EB1C239BD4550052B65E /* 选择@2x.png in Resources */,
 				DB34EB09239BD4550052B65E /* remind1@2x.png in Resources */,
 				DB34EADE239BD4550052B65E /* timeTable_image_pull@2x.png in Resources */,
@@ -2248,6 +2257,7 @@
 				1A14136D235F524B0001417E /* UIImage+Helper.m in Sources */,
 				DB34EB3A239BD4550052B65E /* CoverView.m in Sources */,
 				DB34EB22239BD4550052B65E /* AddRemindViewController.m in Sources */,
+				D0AA00C523E4D1150006A50D /* QAAskIntegralPickerView.m in Sources */,
 				EEF3121223D8A6DC001ED02E /* LQQFinderView.m in Sources */,
 				D03E59D723DB30D100E0F34D /* QAAnswerModel.m in Sources */,
 				EEF3121723D8A6DC001ED02E /* HistoryView.m in Sources */,
