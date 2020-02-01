@@ -16,7 +16,7 @@
                 <outlet property="commitBtn" destination="BtE-2l-T9X" id="uGy-7o-iLO"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="ENh-nV-fzW"/>
                 <outlet property="integralNumLabel" destination="gch-oB-gzT" id="4FT-4Q-SpY"/>
-                <outlet property="integralPickView" destination="480-MO-JwV" id="moW-Zr-Ant"/>
+                <outlet property="integralPickBackgroundView" destination="480-MO-JwV" id="kmS-Oz-p5H"/>
                 <outlet property="timeLabel" destination="GrK-tz-Seo" id="KD2-1Z-sXh"/>
                 <outlet property="timePickerVIew" destination="Ycm-aI-jpc" id="hij-R7-evj"/>
             </connections>

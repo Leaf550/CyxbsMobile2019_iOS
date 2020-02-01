@@ -10,11 +10,15 @@
 #import "QAAskModel.h"
 #import "QAAskNextStepView.h"
 #import "QAAskNextStepViewController.h"
+#import "QAAskIntegralPickerView.h"
 @interface QAAskViewController ()<UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(strong,nonatomic)UITextView *askTextView;
 @property(strong,nonatomic)NSMutableArray *askImageArray;
 @property(strong,nonatomic)QAAskModel *model;
+@property(strong,nonatomic)UITextField *titleTextField;
 @property(strong,nonatomic)QAAskNextStepView *nextStepView;
+@property(copy,nonatomic)NSString *kind;
+@property(strong,nonatomic)NSMutableArray *kindBtnArray;
 @end
 
 @implementation QAAskViewController
@@ -22,9 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    //    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:243/255.0 blue:248/255.0 alpha:1.0];
     [self configNavagationBar];
     [self setNavigationBar:@"提问"];
+    [self setNotification];
     [self setupUI];
 }
 
@@ -74,6 +78,31 @@
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
 }
+-(void)setNotification{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(QAQuestionCommitSuccess)
+                                                 name:@"QAQuestionCommitSuccess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(QAQuestionCommitFailure)
+                                                 name:@"QAQuestionCommitFailure" object:nil];
+}
+-(void)QAQuestionCommitSuccess{
+    [self hiddenNextStepView];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)QAQuestionCommitFailure{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+    UIAlertController *controller=[UIAlertController alertControllerWithTitle:@"网络错误" message:@"答案提交失败" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *act1=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [controller addAction:act1];
+    
+    [self presentViewController:controller animated:YES completion:^{
+        
+    }];
+}
 -(void)setupUI{
     
     
@@ -98,27 +127,31 @@
         make.height.mas_equalTo(25);
     }];
     NSArray *titleArray = @[@"学习",@"匿名",@"生活",@"其他"];
+    self.kindBtnArray = [NSMutableArray array];
     for (int i = 0; i < titleArray.count; i++) {
         
         UIButton *titleBtn = [[UIButton alloc]init];
         [titleBtn setTitle:titleArray[i] forState:UIControlStateNormal];
         [titleBtn setTitleColor:[UIColor colorWithHexString:@"#94A6C4"] forState:UIControlStateNormal];
+        titleBtn.backgroundColor = [UIColor colorWithHexString:@"#E8F0FC"];
         titleBtn.layer.cornerRadius = 12;
+        titleBtn.tag = i;
+        [titleBtn addTarget:self action:@selector(tapTitleBtn:) forControlEvents:UIControlEventTouchUpInside];
         if (i == 0) {
             [titleBtn setFrame:CGRectMake(20, 5, 45, 23)];
-            titleBtn.backgroundColor = [UIColor colorWithHexString:@"#F7DAD7"];
         }else{
             [titleBtn setFrame:CGRectMake(20+i*65, 5, 45, 23)];
-            titleBtn.backgroundColor = [UIColor colorWithHexString:@"#E8F0FC"];
         }
+        
+        [self.kindBtnArray addObject:titleBtn];
         [titleView addSubview:titleBtn];
         
     }
-    UITextField *titleTextField = [[UITextField alloc]init];
-    titleTextField.backgroundColor = [UIColor colorWithHexString:@"#E8F0FC"];
-    [self.view addSubview:titleTextField];
+    self.titleTextField = [[UITextField alloc]init];
+    self.titleTextField.backgroundColor = [UIColor colorWithHexString:@"#E8F0FC"];
+    [self.view addSubview:self.titleTextField];
     
-    [titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view.mas_left).mas_offset(20);
         make.right.mas_equalTo(self.view.mas_right).mas_offset(-20);
         make.top.mas_equalTo(titleView.mas_bottom).mas_offset(10);
@@ -137,13 +170,13 @@
     [self.askTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.view.mas_right).mas_offset(-20);
         make.left.mas_equalTo(self.view.mas_left).mas_offset(20);
-        make.top.mas_equalTo(titleTextField.mas_bottom).mas_offset(10);
+        make.top.mas_equalTo(self.titleTextField.mas_bottom).mas_offset(10);
         make.height.mas_equalTo(215);
     }];
     
     UIImageView *addImageView = [[UIImageView alloc]init];
     self.askImageArray = [NSMutableArray array];
-    [self.askImageArray addObject:addImageView];
+//    [self.askImageArray addObject:addImageView];
     [addImageView setImage:[UIImage imageNamed:@"userIcon"]];
     //    [addImageView setImage:self.askImageArray[0]];
     addImageView.userInteractionEnabled = YES;
@@ -171,6 +204,19 @@
     
     return YES;
     
+}
+-(void)tapTitleBtn:(UIButton *)sender{
+    
+    for (int i = 0;i < self.kindBtnArray.count;i++) {
+        UIButton *btn = self.kindBtnArray[i];
+        if (i == sender.tag) {
+            btn.backgroundColor = [UIColor colorWithHexString:@"#F7DAD7"];
+        }else{
+            btn.backgroundColor = [UIColor colorWithHexString:@"#E8F0FC"];
+        }
+    }
+    NSArray *titleArray = @[@"学习",@"匿名",@"生活",@"其他"];
+    self.kind = titleArray[sender.tag];
 }
 
 -(void)setAddImageView{
@@ -280,7 +326,6 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)nextStep{
-    
     if ([[UIApplication sharedApplication].keyWindow viewWithTag:999]) {
         [[[UIApplication sharedApplication].keyWindow viewWithTag:999] removeFromSuperview];
     }
@@ -309,7 +354,7 @@
     [window addSubview:view];
     CGRect frame = CGRectMake(0, SCREEN_HEIGHT - 530, SCREEN_WIDTH, 550);
     [UIView animateWithDuration:0.5f delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
-        self.nextStepView.frame = frame;
+        self->_nextStepView.frame = frame;
         [backView setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 530)];
     } completion:nil];
     
@@ -320,15 +365,20 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     UIView *view = [window viewWithTag:999];
     [UIView animateWithDuration:0.4f animations:^{
-        CGRect frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 500);
+        //        CGRect frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 500);
     } completion:^(BOOL finished) {
         [view removeFromSuperview];
     }];
 }
 
 -(void)commitAsk{
+    NSString *title = self.titleTextField.text;
+    NSString *content = self.askTextView.text;
+    QAAskIntegralPickerView *integralPickerView =  self.nextStepView.integralPickView;
+    NSString *reward = integralPickerView.integralNum;
+    NSString *disappearTime = self.nextStepView.timeLabel.text;
+    self.model = [[QAAskModel alloc]init];
+    [self.model commitAsk:title content:content kind:self.kind reward:reward disappearTime:disappearTime imageArray:self.askImageArray];
     
-    //    self.model = [[QAAskModel alloc]init];
-
 }
 @end

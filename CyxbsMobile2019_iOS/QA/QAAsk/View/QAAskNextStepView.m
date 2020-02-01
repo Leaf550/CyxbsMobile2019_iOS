@@ -37,8 +37,10 @@
     
     self.commitBtn.layer.cornerRadius = 20;
     
-    QAAskIntegralPickerView *view = [[QAAskIntegralPickerView alloc]initWithFrame:CGRectMake(0, 0, self.integralPickView.frame.size.width, self.integralPickView.frame.size.height)];
-    [self.integralPickView addSubview:view];
+    QAAskIntegralPickerView *view = [[QAAskIntegralPickerView alloc]initWithFrame:CGRectMake(0, 0, self.integralPickBackgroundView.frame.size.width, self.integralPickBackgroundView.frame.size.height)];
+    self.integralPickView = view;
+    [self.integralPickBackgroundView addSubview:self.integralPickView];
+    
     
    NSDate *date = [NSDate date];
 //如果没有规定formatter的时区，那么formatter默认的就是当前时区

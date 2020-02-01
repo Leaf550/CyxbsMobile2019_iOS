@@ -60,6 +60,7 @@
 #pragma mark pickerView滚动方法
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     self.integralNum = self.integralPickViewContent[row];
+    NSLog(@"%@",self.integralNum);
     
 }
 
