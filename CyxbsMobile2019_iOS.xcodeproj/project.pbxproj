@@ -104,6 +104,20 @@
 		1AFD1527237D9A7E004D9CEA /* MineEditTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFD1526237D9A7E004D9CEA /* MineEditTextField.m */; };
 		1AFD153223819FBD004D9CEA /* EditMyInfoTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFD153123819FBD004D9CEA /* EditMyInfoTransitionAnimator.m */; };
 		2A484C14CCF353BF33ED4EE4 /* libPods-CyxbsMobile2019_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0913CE267FCBD5EB99727800 /* libPods-CyxbsMobile2019_iOS.a */; };
+		2F9D82ED243F2B0200F17730 /* DLReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D82EC243F2B0200F17730 /* DLReminderViewController.m */; };
+		2F9D82F0243F2BB500F17730 /* DLReminderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D82EF243F2BB500F17730 /* DLReminderModel.m */; };
+		2F9D82F3243F423D00F17730 /* DLReminderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D82F2243F423D00F17730 /* DLReminderView.m */; };
+		2F9D82F6243F469A00F17730 /* DLNextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D82F5243F469A00F17730 /* DLNextButton.m */; };
+		2F9D82F9243F46C100F17730 /* DLTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D82F8243F46C100F17730 /* DLTextFiled.m */; };
+		2F9D82FB243F53FC00F17730 /* Reminder.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D82FA243F53FC00F17730 /* Reminder.xcassets */; };
+		2F9D8310244067CB00F17730 /* DLReminderSetDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D830F244067CB00F17730 /* DLReminderSetDetailVC.m */; };
+		2F9D83162440684A00F17730 /* DLReminderSetTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D83152440684A00F17730 /* DLReminderSetTimeVC.m */; };
+		2F9D83252440796100F17730 /* DLReminderView+Reset.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D83242440796100F17730 /* DLReminderView+Reset.m */; };
+		2F9D8328244088D900F17730 /* DLHistodyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D8327244088D900F17730 /* DLHistodyButton.m */; };
+		2F9D83312440B82300F17730 /* DLWeeklSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D83302440B82300F17730 /* DLWeeklSelectView.m */; };
+		2F9D83342440C93900F17730 /* DLWeekButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D83332440C93900F17730 /* DLWeekButton.m */; };
+		2F9D83432441971C00F17730 /* DLTimeSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D83422441971C00F17730 /* DLTimeSelectView.m */; };
+		2F9D834C2441E75C00F17730 /* DLTimeSelectedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D834B2441E75C00F17730 /* DLTimeSelectedButton.m */; };
 		D0011A6E23F082FD009A242C /* QAAskExitView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0011A6D23F082FD009A242C /* QAAskExitView.m */; };
 		D0011A7023F0830B009A242C /* QAAskExitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0011A6F23F0830B009A242C /* QAAskExitView.xib */; };
 		D0011A7523F08CB5009A242C /* QAAnswerExitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0011A7223F08CB5009A242C /* QAAnswerExitView.xib */; };
@@ -536,6 +550,33 @@
 		1AFD1526237D9A7E004D9CEA /* MineEditTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineEditTextField.m; sourceTree = "<group>"; };
 		1AFD153023819FBD004D9CEA /* EditMyInfoTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditMyInfoTransitionAnimator.h; sourceTree = "<group>"; };
 		1AFD153123819FBD004D9CEA /* EditMyInfoTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditMyInfoTransitionAnimator.m; sourceTree = "<group>"; };
+		2F9D82EB243F2B0200F17730 /* DLReminderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLReminderViewController.h; sourceTree = "<group>"; };
+		2F9D82EC243F2B0200F17730 /* DLReminderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLReminderViewController.m; sourceTree = "<group>"; };
+		2F9D82EE243F2BB500F17730 /* DLReminderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLReminderModel.h; sourceTree = "<group>"; };
+		2F9D82EF243F2BB500F17730 /* DLReminderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLReminderModel.m; sourceTree = "<group>"; };
+		2F9D82F1243F423D00F17730 /* DLReminderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLReminderView.h; sourceTree = "<group>"; };
+		2F9D82F2243F423D00F17730 /* DLReminderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLReminderView.m; sourceTree = "<group>"; };
+		2F9D82F4243F469A00F17730 /* DLNextButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLNextButton.h; sourceTree = "<group>"; };
+		2F9D82F5243F469A00F17730 /* DLNextButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLNextButton.m; sourceTree = "<group>"; };
+		2F9D82F7243F46C100F17730 /* DLTextFiled.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLTextFiled.h; sourceTree = "<group>"; };
+		2F9D82F8243F46C100F17730 /* DLTextFiled.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLTextFiled.m; sourceTree = "<group>"; };
+		2F9D82FA243F53FC00F17730 /* Reminder.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Reminder.xcassets; sourceTree = "<group>"; };
+		2F9D830E244067CB00F17730 /* DLReminderSetDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLReminderSetDetailVC.h; sourceTree = "<group>"; };
+		2F9D830F244067CB00F17730 /* DLReminderSetDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLReminderSetDetailVC.m; sourceTree = "<group>"; };
+		2F9D83142440684A00F17730 /* DLReminderSetTimeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLReminderSetTimeVC.h; sourceTree = "<group>"; };
+		2F9D83152440684A00F17730 /* DLReminderSetTimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLReminderSetTimeVC.m; sourceTree = "<group>"; };
+		2F9D83232440796100F17730 /* DLReminderView+Reset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DLReminderView+Reset.h"; sourceTree = "<group>"; };
+		2F9D83242440796100F17730 /* DLReminderView+Reset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DLReminderView+Reset.m"; sourceTree = "<group>"; };
+		2F9D8326244088D900F17730 /* DLHistodyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLHistodyButton.h; sourceTree = "<group>"; };
+		2F9D8327244088D900F17730 /* DLHistodyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLHistodyButton.m; sourceTree = "<group>"; };
+		2F9D832F2440B82300F17730 /* DLWeeklSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLWeeklSelectView.h; sourceTree = "<group>"; };
+		2F9D83302440B82300F17730 /* DLWeeklSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLWeeklSelectView.m; sourceTree = "<group>"; };
+		2F9D83322440C93900F17730 /* DLWeekButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLWeekButton.h; sourceTree = "<group>"; };
+		2F9D83332440C93900F17730 /* DLWeekButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLWeekButton.m; sourceTree = "<group>"; };
+		2F9D83412441971C00F17730 /* DLTimeSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLTimeSelectView.h; sourceTree = "<group>"; };
+		2F9D83422441971C00F17730 /* DLTimeSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLTimeSelectView.m; sourceTree = "<group>"; };
+		2F9D834A2441E75C00F17730 /* DLTimeSelectedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLTimeSelectedButton.h; sourceTree = "<group>"; };
+		2F9D834B2441E75C00F17730 /* DLTimeSelectedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLTimeSelectedButton.m; sourceTree = "<group>"; };
 		6F3D5CAF0787713C5281B516 /* Pods-CyxbsMobile2019_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CyxbsMobile2019_iOS.debug.xcconfig"; path = "Target Support Files/Pods-CyxbsMobile2019_iOS/Pods-CyxbsMobile2019_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D0011A6C23F082FD009A242C /* QAAskExitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QAAskExitView.h; sourceTree = "<group>"; };
 		D0011A6D23F082FD009A242C /* QAAskExitView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QAAskExitView.m; sourceTree = "<group>"; };
@@ -1619,6 +1660,64 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2F9D82EA243F2A5800F17730 /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D8311244067E900F17730 /* ViewController */,
+				2F9D83122440680200F17730 /* View */,
+				2F9D83132440681500F17730 /* Model */,
+				2F9D82FA243F53FC00F17730 /* Reminder.xcassets */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		2F9D8311244067E900F17730 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D82EB243F2B0200F17730 /* DLReminderViewController.h */,
+				2F9D82EC243F2B0200F17730 /* DLReminderViewController.m */,
+				2F9D830E244067CB00F17730 /* DLReminderSetDetailVC.h */,
+				2F9D830F244067CB00F17730 /* DLReminderSetDetailVC.m */,
+				2F9D83142440684A00F17730 /* DLReminderSetTimeVC.h */,
+				2F9D83152440684A00F17730 /* DLReminderSetTimeVC.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		2F9D83122440680200F17730 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D82F1243F423D00F17730 /* DLReminderView.h */,
+				2F9D82F2243F423D00F17730 /* DLReminderView.m */,
+				2F9D82F4243F469A00F17730 /* DLNextButton.h */,
+				2F9D82F5243F469A00F17730 /* DLNextButton.m */,
+				2F9D82F7243F46C100F17730 /* DLTextFiled.h */,
+				2F9D82F8243F46C100F17730 /* DLTextFiled.m */,
+				2F9D834A2441E75C00F17730 /* DLTimeSelectedButton.h */,
+				2F9D834B2441E75C00F17730 /* DLTimeSelectedButton.m */,
+				2F9D83232440796100F17730 /* DLReminderView+Reset.h */,
+				2F9D83242440796100F17730 /* DLReminderView+Reset.m */,
+				2F9D8326244088D900F17730 /* DLHistodyButton.h */,
+				2F9D8327244088D900F17730 /* DLHistodyButton.m */,
+				2F9D83322440C93900F17730 /* DLWeekButton.h */,
+				2F9D83332440C93900F17730 /* DLWeekButton.m */,
+				2F9D832F2440B82300F17730 /* DLWeeklSelectView.h */,
+				2F9D83302440B82300F17730 /* DLWeeklSelectView.m */,
+				2F9D83412441971C00F17730 /* DLTimeSelectView.h */,
+				2F9D83422441971C00F17730 /* DLTimeSelectView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2F9D83132440681500F17730 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D82EE243F2BB500F17730 /* DLReminderModel.h */,
+				2F9D82EF243F2BB500F17730 /* DLReminderModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		31CAD973D4E3B19C047677AE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1843,8 +1942,9 @@
 		DB34EA28239BD4540052B65E /* ClassSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				1A1691F92430ECA60076EDC7 /* ClassTabBarController.h */,
+				2F9D82EA243F2A5800F17730 /* Reminder */,
 				1A1691FA2430ECA60076EDC7 /* ClassTabBarController.m */,
+				1A1691F92430ECA60076EDC7 /* ClassTabBarController.h */,
 				1A1691FC2430ECFD0076EDC7 /* ClassTabBar.h */,
 				1A1691FD2430ECFE0076EDC7 /* ClassTabBar.m */,
 				DB34EA29239BD4540052B65E /* Controller */,
@@ -2673,6 +2773,7 @@
 				DB34EB19239BD4550052B65E /* 周数@2x.png in Resources */,
 				DB34EB02239BD4550052B65E /* 多课0@3x.png in Resources */,
 				DB34EAEF239BD4550052B65E /* remind_image_editing@3x.png in Resources */,
+				2F9D82FB243F53FC00F17730 /* Reminder.xcassets in Resources */,
 				DB34EAE1239BD4550052B65E /* 箭头@3x.png in Resources */,
 				1A1691F5243073850076EDC7 /* SchoolBus.xcassets in Resources */,
 				D05C04CF23E5E047009A2E63 /* QAAskNextStepView.xib in Resources */,
@@ -2759,7 +2860,9 @@
 				DB34EB3B239BD4550052B65E /* WeekChooseButton.m in Sources */,
 				EE75BFCA23F5884100208039 /* ScoreTwoTitleView.m in Sources */,
 				EE75BFBE23F5884100208039 /* SCGenericChart.m in Sources */,
+				2F9D82F9243F46C100F17730 /* DLTextFiled.m in Sources */,
 				DB34EAD0239BD4550052B65E /* WYCShowDetailView.m in Sources */,
+				2F9D82F3243F423D00F17730 /* DLReminderView.m in Sources */,
 				EE75BFA423F5884100208039 /* ExamArrangeDataItem.m in Sources */,
 				1AFD151C237D81DD004D9CEA /* EditMyInfoPresenter.m in Sources */,
 				1AD038DA23FA775600D5C90E /* MineQACommentItem.m in Sources */,
@@ -2812,6 +2915,7 @@
 				1AD038D123F92F6700D5C90E /* MineQAMyQuestionDraftItem.m in Sources */,
 				1A14136F235F524B0001417E /* UserDefaultTool.m in Sources */,
 				1A141366235F524B0001417E /* AESCipher.m in Sources */,
+				2F9D83162440684A00F17730 /* DLReminderSetTimeVC.m in Sources */,
 				EE75BFA823F5884100208039 /* StudentScheduleViewController.m in Sources */,
 				1AFD1524237D826A004D9CEA /* EditMyInfoContentView.m in Sources */,
 				D026A80F23D4F7D0001A4774 /* QAListTableViewCell.m in Sources */,
@@ -2835,10 +2939,12 @@
 				DB34EACE239BD4550052B65E /* DateModle.m in Sources */,
 				1A141322235F521C0001417E /* BaseNavigationController.m in Sources */,
 				EE75BF9D23F5884100208039 /* LQQFinderView.m in Sources */,
+				2F9D8328244088D900F17730 /* DLHistodyButton.m in Sources */,
 				1A15DF97238D03B3005E0843 /* CheckInContentView.m in Sources */,
 				DB34EAD5239BD4550052B65E /* WYCClassDetailView.m in Sources */,
 				DB34EB24239BD4550052B65E /* LessonController.m in Sources */,
 				1A16592D23D880BE0039BA46 /* MyQuestionsReleasedCell.m in Sources */,
+				2F9D834C2441E75C00F17730 /* DLTimeSelectedButton.m in Sources */,
 				DB34EB2F239BD4550052B65E /* LessonBtnModel.m in Sources */,
 				DB34EADB239BD4550052B65E /* LessonRemindNotification.m in Sources */,
 				1AD038CE23F91C3D00D5C90E /* MineQAMyQuestionItem.m in Sources */,
@@ -2860,6 +2966,7 @@
 				1A30F39423D057D000FBBD83 /* IntegralStoreViewController.m in Sources */,
 				1A30F39723D05AB200FBBD83 /* IntegralStoreTransitionAnimator.m in Sources */,
 				EE75BFBA23F5884100208039 /* SCLineChart.m in Sources */,
+				2F9D82F0243F2BB500F17730 /* DLReminderModel.m in Sources */,
 				EE75BFA323F5884100208039 /* ExamArrangeData.m in Sources */,
 				EE75BF9623F5884100208039 /* ElectricFeeItem.m in Sources */,
 				1A141372235F524B0001417E /* NSDate+schoolDate.m in Sources */,
@@ -2888,6 +2995,7 @@
 				DB34EB37239BD4550052B65E /* LZWeekScrollView.m in Sources */,
 				1A141375235F524B0001417E /* UIImage+ImageEffects.m in Sources */,
 				EE75BFC123F5884100208039 /* SCColor.m in Sources */,
+				2F9D82F6243F469A00F17730 /* DLNextButton.m in Sources */,
 				EE75BFAB23F5884100208039 /* TeacherScheduleViewController.m in Sources */,
 				D03C6B2323DF4CAA0093EF09 /* QAAskNextStepViewController.m in Sources */,
 				1A7BAC692369B28400CA512D /* MineHeaderView.m in Sources */,
@@ -2895,6 +3003,7 @@
 				1A16592323D87E460039BA46 /* MineQATableViewController.m in Sources */,
 				EE75BFC523F5884100208039 /* SCPieChartDataItem.m in Sources */,
 				1A30F3AC23D33F1300FBBD83 /* CheckInPresenter.m in Sources */,
+				2F9D83312440B82300F17730 /* DLWeeklSelectView.m in Sources */,
 				EE75BFA723F5884100208039 /* TestArrangeViewController.m in Sources */,
 				EE75BFBC23F5884100208039 /* SCCircleChart.m in Sources */,
 				EE75BFB123F5884100208039 /* EmptyClassViewController.m in Sources */,
@@ -2902,6 +3011,7 @@
 				1A141376235F524B0001417E /* UIImage+Color.m in Sources */,
 				EE75BF9923F5884100208039 /* OneNewsItem.m in Sources */,
 				DB34EB3D239BD4550052B65E /* ORWInputTextView.m in Sources */,
+				2F9D82ED243F2B0200F17730 /* DLReminderViewController.m in Sources */,
 				DB34EB23239BD4550052B65E /* TimeChooseViewController.m in Sources */,
 				1AFD153223819FBD004D9CEA /* EditMyInfoTransitionAnimator.m in Sources */,
 				EE75BFB323F5884100208039 /* StoreyResultView.m in Sources */,
@@ -2915,6 +3025,7 @@
 				DB34EB22239BD4550052B65E /* AddRemindViewController.m in Sources */,
 				D03E59D723DB30D100E0F34D /* QAAnswerModel.m in Sources */,
 				D0101D5C2433C885004337ED /* SDMaskGuidController.m in Sources */,
+				2F9D83252440796100F17730 /* DLReminderView+Reset.m in Sources */,
 				DB34EB26239BD4550052B65E /* DetailPageController.m in Sources */,
 				D026A80423D4E054001A4774 /* QAListSegmentView.m in Sources */,
 				EE75BFA223F5884100208039 /* ExamArrangeModel.m in Sources */,
@@ -2937,6 +3048,7 @@
 				EE75BFA623F5884100208039 /* PointAndDottedLineView.m in Sources */,
 				EE75BFBB23F5884100208039 /* SCTool.m in Sources */,
 				EE75BFC323F5884100208039 /* UICountingLabel.m in Sources */,
+				2F9D8310244067CB00F17730 /* DLReminderSetDetailVC.m in Sources */,
 				EE75BF9C23F5884100208039 /* EnterButton.m in Sources */,
 				1AD038D723FA691100D5C90E /* MineQAMyAnswerDraftItem.m in Sources */,
 				D0101D582433C885004337ED /* UIResponder+SDMask.m in Sources */,
@@ -2959,8 +3071,10 @@
 				1AD038DD23FA7B0E00D5C90E /* MineQARecommentItem.m in Sources */,
 				D0101D572433C885004337ED /* NSLayoutConstraint+SDMask.m in Sources */,
 				EE75BFBF23F5884100208039 /* SCChartLabel.m in Sources */,
+				2F9D83342440C93900F17730 /* DLWeekButton.m in Sources */,
 				D0011A6E23F082FD009A242C /* QAAskExitView.m in Sources */,
 				EE75BF9123F5884100208039 /* InstallBuildTableViewCell.m in Sources */,
+				2F9D83432441971C00F17730 /* DLTimeSelectView.m in Sources */,
 				1A14136E235F524B0001417E /* NSString+Emoji.m in Sources */,
 				1A141330235F523B0001417E /* MineViewController.m in Sources */,
 				EE75BF9B23F5884100208039 /* VolunteerModel.m in Sources */,
