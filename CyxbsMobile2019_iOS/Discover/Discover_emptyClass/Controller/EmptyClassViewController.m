@@ -50,7 +50,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:239/255.0 green:240/255.0 blue:247/255.0 alpha:1];
-    self.navigationController.navigationBar.hidden = YES;
     [self addHorizontallyScrollView];//第几周
     [self addBackButton];//返回按钮的约束依赖于上面那个方法的结果
     [self addDayView];//第几天
@@ -75,10 +74,7 @@
     [backButton addTarget:self action: @selector(back) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void) back {
-    self.tabBarController.tabBar.hidden = NO;
     [self.navigationController popViewControllerAnimated:YES];
-    self.navigationController.navigationBar.hidden = NO;
-    
 }
 //MARK: 选择第几周
 - (void) addHorizontallyScrollView {
@@ -89,7 +85,11 @@
     self.numberOfWeekView.contentSize = CGSizeMake(NUMBEROFWEEKS * 56 + 3 * (NUMBEROFWEEKS - 1), 0);
     [numberOfWeekView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(34);
-        make.top.equalTo(self.view).offset(55);
+        if IS_IPHONEX {
+            make.top.equalTo(self.view).offset(55);
+        }else {
+            make.top.equalTo(self.view).offset(25);
+        }
         make.right.equalTo(self.view).offset(0);
         make.height.equalTo(@30);
     }];
@@ -163,7 +163,9 @@
 
 //MARK: 选择周几
 - (void) addDayView {
-    UIView *weekDayView = [[UIView alloc]init];
+    UIScrollView *weekDayView = [[UIScrollView alloc]init];
+    weekDayView.showsHorizontalScrollIndicator = NO;
+  weekDayView.contentSize = CGSizeMake(7 * 56, 0);
     self.weekDayView = weekDayView;
     [self.view addSubview:weekDayView];
     [weekDayView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -196,8 +198,8 @@
             }];
         }else {
                [buttonItem mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.weekDayArray[flag-1].mas_right).offset((self.view.width - 34 - 56 * weekDayArray.count)/ (weekDayArray.count - 1));
-                   //34为zhegeView距离左边的距离，56为这个每一个button的宽度
+                make.left.equalTo(self.weekDayArray[flag-1].mas_right)/*.offset((self.view.width - 34 - 56 * weekDayArray.count)/ (weekDayArray.count - 1))*/;
+                   //34为这个View距离左边的距离，56为这个每一个button的宽度
 
                 make.width.height.centerY.equalTo(self.weekDayArray[flag-1]);
             }];

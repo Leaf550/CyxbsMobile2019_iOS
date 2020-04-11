@@ -28,16 +28,21 @@
     } else {
         // Fallback on earlier versions
     }
-    self.navigationController.navigationBar.hidden = YES;
     [self addCustomTabbarView];
     [self addSegmentView];
     [self addBackButton];
     // Do any additional setup after loading the view.
 }
 
+
 - (void)addCustomTabbarView {
-    UIView *backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
-    self.backgroundView = backgroundView;
+    UIView *backgroundView;
+    if IS_IPHONEX {
+        backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 55, self.view.width, 40)];
+    }else {
+        backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 25, self.view.width, 40)];
+    }
+        self.backgroundView = backgroundView;
     if (@available(iOS 11.0, *)) {
         backgroundView.backgroundColor = navigationbarColor;
     } else {
@@ -52,7 +57,7 @@
     [self.backgroundView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.backgroundView).offset(-20);
+        make.centerY.equalTo(self.backgroundView);
     }];
     if (@available(iOS 11.0, *)) {
         titleLabel.textColor = Color21_49_91_F0F0F2;
@@ -73,9 +78,7 @@
     [backButton addTarget:self action: @selector(back) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void) back {
-[self.navigationController popViewControllerAnimated:YES];
-self.navigationController.navigationBar.hidden = NO;
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)addSegmentView {
     StudentScheduleViewController *stuVC = [[StudentScheduleViewController alloc]init];
