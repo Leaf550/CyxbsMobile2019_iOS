@@ -16,7 +16,7 @@
 #import "WYCShowDetailView.h"
 #import "WMTWeekChooseBar.h"
 #import "LoginViewController.h"
-
+#import "DLReminderViewController.h"
 
 #import "AddRemindViewController.h"
 #import "UIFont+AdaptiveFont.h"
@@ -326,7 +326,7 @@
 //添加备忘
 - (void)addNote{
     
-    AddRemindViewController *vc = [[AddRemindViewController alloc]init];
+   DLReminderViewController *vc = [[DLReminderViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -458,7 +458,7 @@
 
 - (void)clickEditNoteBtn:(NSDictionary *)dic{
     [self hiddenDetailView];
-    AddRemindViewController *vc = [[AddRemindViewController alloc]initWithRemind:dic];
+    DLReminderViewController *vc = [[DLReminderViewController alloc]initWithRemindDic:dic];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     

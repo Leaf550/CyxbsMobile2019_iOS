@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DLReminderViewController : UIViewController
-
+- (instancetype)initWithRemindDic:(NSDictionary *)remind;
 @end
 
 NS_ASSUME_NONNULL_END

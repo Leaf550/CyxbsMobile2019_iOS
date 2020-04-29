@@ -10,7 +10,7 @@
 #import "DLReminderView.h"
 #import "DLReminderSetDetailVC.h"
 #import "DLHistodyButton.h"
-
+#import "RemindNotification.h"
 #import <Masonry.h>
 #import <YYKit.h>
 #define kRateX [UIScreen mainScreen].bounds.size.width/375   //以iPhoneX为基准
@@ -19,13 +19,24 @@
 @property (nonatomic, strong) NSString *inputString; //
 @property (nonatomic, strong) NSMutableArray *buttonTitleArray;  //
 @property (nonatomic, strong) NSUserDefaults *user;
-@property (nonatomic, assign) NSInteger deleteIndex; //需要删除buttonTitleArray的endIndex
+@property (nonatomic, assign) NSInteger deleteIndex;
+@property (nonatomic, copy)NSDictionary *remind;
+//需要删除buttonTitleArray的endIndex
 @property (nonatomic, strong) DLReminderView *reminderView;
+@property (nonatomic, assign) BOOL isEditing;
 @end
 
 @implementation DLReminderViewController
 - (void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = YES;
+}
+- (instancetype)initWithReminDic:(NSDictionary *)remind{
+    self = [self init];
+    if (self) {
+        self.remind = remind;
+        self.isEditing = YES;
+    }
+    return self;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -126,5 +137,6 @@
     }
     return _reminderView;
 }
+
 
 @end

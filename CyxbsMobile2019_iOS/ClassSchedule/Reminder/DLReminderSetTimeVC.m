@@ -277,4 +277,5 @@
         hasOccupiedWidth += size.width + 50*kRateX;
     }
 }
+
 @end
