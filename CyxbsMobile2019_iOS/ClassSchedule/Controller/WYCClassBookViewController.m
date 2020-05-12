@@ -16,7 +16,7 @@
 #import "WYCShowDetailView.h"
 #import "WMTWeekChooseBar.h"
 #import "LoginViewController.h"
-
+#import "ClassTabBarController.h"
 
 #import "AddRemindViewController.h"
 #import "UIFont+AdaptiveFont.h"
@@ -37,7 +37,7 @@
 @property (nonatomic, strong) NSMutableArray *titleTextArray;
 //@property (nonatomic, strong) IBOutlet UIView *rootView;
 @property (nonatomic, strong)  UIScrollView *scrollView;
-
+@property (nonatomic, strong) WYCClassBookView *classView;
 @property (nonatomic, strong) WMTWeekChooseBar *weekChooseBar;
 @property (nonatomic, strong) DateModle *dateModel;
 @property (nonatomic, strong) WYCClassAndRemindDataModel *model;
@@ -56,7 +56,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    //self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(ModelDataLoadSuccess)
@@ -214,7 +214,7 @@
                 [view initView:NO];
                 [view addBar:self.dateModel.dateArray[dateNum-1] isFirst:NO];
             }
-            UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(view.frame.size.width/15-10,-20,60,30)];
+            UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(view.frame.size.width/15,-20,60,30)];
             if (@available(iOS 11.0, *)) {
                 titleView.backgroundColor = [UIColor colorNamed:@"ClassScedulelabelColor"];
                        } else {
@@ -229,7 +229,7 @@
                    titleArray[self.dateModel.nowWeek.integerValue] = @"本 周";
                }
 //
-            _titleText = titleArray[_index];
+            _titleText = titleArray[dateNum];
             titleLabel.text = _titleText;
               titleLabel.textAlignment = NSTextAlignmentCenter;
             if (@available(iOS 11.0, *)) {
@@ -247,7 +247,7 @@
                 // Fallback on earlier versions
                 dragHintView.backgroundColor = [UIColor whiteColor];
             }
-            
+            self.dragHintView = dragHintView;
             dragHintView.layer.cornerRadius = 2.5;
             [view addSubview:titleView];
             [titleView addSubview:titleLabel];
@@ -513,7 +513,12 @@
     [self reloadView];
 }
 
-
+- (void)dismissWithGesture:(UIPanGestureRecognizer *)gesture {
+    ((ClassTabBarController *)self.transitioningDelegate).presentPanGesture = gesture;
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
 @end
 
 

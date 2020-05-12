@@ -11,7 +11,7 @@
 @interface ClassScheduleTabBarView ()
 
 @property (nonatomic, weak) UIView *bottomCoverView;
-@property (nonatomic, strong) NSDictionary *dic;
+//@property (nonatomic, strong) NSDictionary *dic;
 @property (nonatomic, weak) UIView *dragHintView;
 
 @end

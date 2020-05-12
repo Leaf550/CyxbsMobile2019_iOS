@@ -8,8 +8,11 @@
 
 #import "ClassTabBarController.h"
 #import "ClassTabBar.h"
+#import "ClassScheduleTransitionAnimator.h"
+#import "ClassSchedulePrecentDrivenViewController.h"
+#import "WYCClassBookViewController.h"
 
-@interface ClassTabBarController ()
+@interface ClassTabBarController ()<UIViewControllerTransitioningDelegate>
 
 @end
 
@@ -26,7 +29,16 @@
 {
     [self removeObserver:self forKeyPath:@"tabBar.hidden" context:nil];
 }
-
+- (void)presentClassSchedule:(UIPanGestureRecognizer *)pan {
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        self.presentPanGesture = pan;
+        
+       WYCClassBookViewController *vc = [[WYCClassBookViewController alloc] init];
+        vc.modalPresentationStyle = UIModalPresentationCustom;
+        vc.transitioningDelegate = self;
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+}
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([change[NSKeyValueChangeNewKey] boolValue] == YES) {
@@ -36,5 +48,28 @@
     }
 }
 
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [[ClassScheduleTransitionAnimator alloc] init];
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    return [[ClassScheduleTransitionAnimator alloc] init];
+}
+
+-(id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
+    if (self.presentPanGesture) {
+        return [[ClassSchedulePrecentDrivenViewController alloc] initWithPanGesture:self.presentPanGesture];
+    } else {
+        return nil;
+    }
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+    if (self.presentPanGesture) {
+        return [[ClassSchedulePrecentDrivenViewController alloc] initWithPanGesture:self.presentPanGesture];
+    } else {
+        return nil;
+    }
+}
 
 @end

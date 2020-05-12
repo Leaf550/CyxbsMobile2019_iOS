@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 教室地点
 @property (nonatomic, weak) UILabel *classroomLabel;
-
+//-(void)initWithDic:(NSDictionary *)dic;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ClassTabBarController : UITabBarController
+@property (nonatomic, strong) UIPanGestureRecognizer *presentPanGesture;
 
 @end
 
