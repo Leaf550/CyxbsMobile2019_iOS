@@ -295,6 +295,8 @@
 		DB4065012466D889006CE5BC /* DLTimeSelectedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4064F02466D888006CE5BC /* DLTimeSelectedButton.m */; };
 		DB4065022466D889006CE5BC /* DLReminderView+Reset.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4064F32466D888006CE5BC /* DLReminderView+Reset.m */; };
 		DB4065032466D889006CE5BC /* DLReminderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4064F42466D888006CE5BC /* DLReminderView.m */; };
+		DB406526246AD96B006CE5BC /* ClassSchedulePrecentDrivenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB406522246AD96B006CE5BC /* ClassSchedulePrecentDrivenViewController.m */; };
+		DB406527246AD96B006CE5BC /* ClassScheduleTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DB406523246AD96B006CE5BC /* ClassScheduleTransitionAnimator.m */; };
 		EE75BF8F23F5884100208039 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE75BEFB23F5884100208039 /* DiscoverViewController.m */; };
 		EE75BF9023F5884100208039 /* electricity_header_setting.gif in Resources */ = {isa = PBXBuildFile; fileRef = EE75BEFD23F5884100208039 /* electricity_header_setting.gif */; };
 		EE75BF9123F5884100208039 /* InstallBuildTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE75BEFE23F5884100208039 /* InstallBuildTableViewCell.m */; };
@@ -948,6 +950,10 @@
 		DB4064F32466D888006CE5BC /* DLReminderView+Reset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DLReminderView+Reset.m"; sourceTree = "<group>"; };
 		DB4064F42466D888006CE5BC /* DLReminderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLReminderView.m; sourceTree = "<group>"; };
 		DB4064F52466D888006CE5BC /* DLReminderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLReminderModel.h; sourceTree = "<group>"; };
+		DB406522246AD96B006CE5BC /* ClassSchedulePrecentDrivenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSchedulePrecentDrivenViewController.m; sourceTree = "<group>"; };
+		DB406523246AD96B006CE5BC /* ClassScheduleTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassScheduleTransitionAnimator.m; sourceTree = "<group>"; };
+		DB406524246AD96B006CE5BC /* ClassScheduleTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassScheduleTransitionAnimator.h; sourceTree = "<group>"; };
+		DB406525246AD96B006CE5BC /* ClassSchedulePrecentDrivenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSchedulePrecentDrivenViewController.h; sourceTree = "<group>"; };
 		EE75BEFA23F5884100208039 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		EE75BEFB23F5884100208039 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		EE75BEFD23F5884100208039 /* electricity_header_setting.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = electricity_header_setting.gif; sourceTree = "<group>"; };
@@ -2267,6 +2273,7 @@
 		DB34EA28239BD4540052B65E /* ClassSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				DB406521246AD96B006CE5BC /* ClassScheduleTransition */,
 				DB4064DA2466D888006CE5BC /* Reminder */,
 				1A1691F92430ECA60076EDC7 /* ClassTabBarController.h */,
 				1A1691FA2430ECA60076EDC7 /* ClassTabBarController.m */,
@@ -2565,6 +2572,17 @@
 				DB4064F52466D888006CE5BC /* DLReminderModel.h */,
 			);
 			path = Reminder;
+			sourceTree = "<group>";
+		};
+		DB406521246AD96B006CE5BC /* ClassScheduleTransition */ = {
+			isa = PBXGroup;
+			children = (
+				DB406522246AD96B006CE5BC /* ClassSchedulePrecentDrivenViewController.m */,
+				DB406523246AD96B006CE5BC /* ClassScheduleTransitionAnimator.m */,
+				DB406524246AD96B006CE5BC /* ClassScheduleTransitionAnimator.h */,
+				DB406525246AD96B006CE5BC /* ClassSchedulePrecentDrivenViewController.h */,
+			);
+			path = ClassScheduleTransition;
 			sourceTree = "<group>";
 		};
 		EE75BEF723F5884100208039 /* Discover */ = {
@@ -3546,6 +3564,7 @@
 				1A7BAC662369AC2900CA512D /* MineContentView.m in Sources */,
 				1AFD1527237D9A7E004D9CEA /* MineEditTextField.m in Sources */,
 				1AEF3116245C701D00487D40 /* MyGoodsPresenter.m in Sources */,
+				DB406527246AD96B006CE5BC /* ClassScheduleTransitionAnimator.m in Sources */,
 				1A5A5EEB236022C500543BAE /* LoginModel.m in Sources */,
 				D069799023D737800007E479 /* QADetailModel.m in Sources */,
 				D0101F68243587A1004337ED /* UIImage+GKDecoder.m in Sources */,
@@ -3651,6 +3670,7 @@
 				EE75BFC323F5884100208039 /* UICountingLabel.m in Sources */,
 				EE75BF9C23F5884100208039 /* EnterButton.m in Sources */,
 				1AD038D723FA691100D5C90E /* MineQAMyAnswerDraftItem.m in Sources */,
+				DB406526246AD96B006CE5BC /* ClassSchedulePrecentDrivenViewController.m in Sources */,
 				D0101D582433C885004337ED /* UIResponder+SDMask.m in Sources */,
 				EE75BFAC23F5884100208039 /* ClassmateItem.m in Sources */,
 				1AD6D1BF23E161100099A7E2 /* MineModel.m in Sources */,

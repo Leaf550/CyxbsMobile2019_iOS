@@ -8,8 +8,10 @@
 
 #import "ClassTabBarController.h"
 #import "ClassTabBar.h"
-
-@interface ClassTabBarController ()
+#import "ClassSchedulePrecentDrivenViewController.h"
+#import "ClassScheduleTransitionAnimator.h"
+#import "WYCClassBookViewController.h"
+@interface ClassTabBarController ()<UIViewControllerTransitioningDelegate>
 
 @end
 
@@ -35,6 +37,39 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"classTabBarHasDisplayed" object:nil];
     }
 }
+- (void)presentClassBookView:(UIPanGestureRecognizer *)pan {
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        self.presentPanGesture = pan;
+        
+      WYCClassBookViewController *vc = [[WYCClassBookViewController alloc] init];
+        vc.modalPresentationStyle = UIModalPresentationCustom;
+        vc.transitioningDelegate = self;
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+}
+#pragma mark - 转场动画
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [[ClassScheduleTransitionAnimator alloc] init];
+}
 
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    return [[ClassScheduleTransitionAnimator alloc] init];
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
+    if (self.presentPanGesture) {
+        return [[ClassSchedulePrecentDrivenViewController alloc] initWithPanGesture:self.presentPanGesture];
+    } else {
+        return nil;
+    }
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+    if (self.presentPanGesture) {
+        return [[ClassSchedulePrecentDrivenViewController alloc] initWithPanGesture:self.presentPanGesture];
+    } else {
+        return nil;
+    }
+}
 
 @end
