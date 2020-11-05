@@ -30,6 +30,8 @@
 #import <MBProgressHUD.h>
 #import "ElectricityView.h"
 #import "VolunteerView.h"
+#import "VolunteerItem.h"
+#import "QueryViewController.h"
 #define Color242_243_248to000000 [UIColor colorNamed:@"color242_243_248&#000000" inBundle:[NSBundle mainBundle] compatibleWithTraitCollection:nil]
 
 #define ColorWhite  [UIColor colorNamed:@"whiteColor" inBundle:[NSBundle mainBundle] compatibleWithTraitCollection:nil]
@@ -297,9 +299,19 @@ typedef NS_ENUM(NSUInteger, LoginStates) {
     [self.volView refreshViewIfNeeded];
 }
 - (void)bindingVolunteerButton {
-    QueryLoginViewController * vc = [[QueryLoginViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+    ///需要在此处判断一下是否已经登陆了志愿者的界面，如果登陆了，则直接跳QueryViewController，如果未登陆的话则跳登陆的viewController
+    if (![self.defaults objectForKey:@"volunteer_account"]) {
+        QueryLoginViewController * vc = [[QueryLoginViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        VolunteerItem *volunteer = [NSKeyedUnarchiver unarchiveObjectWithFile:[VolunteerItem archivePath]];
+        QueryViewController *queryVC = [[QueryViewController alloc] initWithVolunteerItem:volunteer];
+        queryVC.view.backgroundColor = [UIColor whiteColor];
+        queryVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:queryVC animated:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginVolunteerAccountSucceed" object:nil];
+    }
 }
 
 - (void)requestData {

@@ -18,6 +18,7 @@
 #import "MineQADataItem.h"
 #import "MineAboutController.h"
 #import <UserNotifications/UserNotifications.h>
+#import "selfSafeViewController.h"
 @interface MineViewController () <MineContentViewDelegate, MineContentViewProtocol, UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, strong) MinePresenter *presenter;
@@ -213,6 +214,13 @@
 
 - (void)selectedAboutCell {
     MineAboutController *vc = [[MineAboutController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)selectedSafeCell {
+    selfSafeViewController *vc = [[selfSafeViewController alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];

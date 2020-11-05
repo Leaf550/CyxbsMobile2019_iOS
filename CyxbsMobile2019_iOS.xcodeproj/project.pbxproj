@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180B106725472C4200F369BE /* SelfSafeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B106625472C4200F369BE /* SelfSafeView.m */; };
+		180B10712547392E00F369BE /* selfSafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B10702547392E00F369BE /* selfSafeViewController.m */; };
+		180B107D25479E9200F369BE /* ChangePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B107C25479E9200F369BE /* ChangePwdViewController.m */; };
+		180B108325479EE800F369BE /* ResetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B108225479EE800F369BE /* ResetPwdViewController.m */; };
+		180B108925479F0F00F369BE /* SetQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B108825479F0F00F369BE /* SetQuestionViewController.m */; };
+		180B108F2547B9AD00F369BE /* ResetPwdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B108E2547B9AD00F369BE /* ResetPwdView.m */; };
+		180B10982547C96000F369BE /* SetQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B10972547C95F00F369BE /* SetQuestionView.m */; };
+		180B10B02549084100F369BE /* QuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B10AF2549084100F369BE /* QuestionView.m */; };
+		180B10B7254A769700F369BE /* questionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B10B6254A769600F369BE /* questionModel.m */; };
+		180B10C9254B18FF00F369BE /* setEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B10C8254B18FE00F369BE /* setEmailViewController.m */; };
+		180B10CF254B196F00F369BE /* setEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B10CE254B196F00F369BE /* setEmail.m */; };
+		180B10D5254BF6F800F369BE /* safePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B10D4254BF6F700F369BE /* safePopView.m */; };
+		180B10DE254C70F900F369BE /* questionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B10DD254C70F900F369BE /* questionItem.m */; };
+		180B10EC254D14AC00F369BE /* questionAndAnswerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B10EB254D14AB00F369BE /* questionAndAnswerModel.m */; };
+		180B10FB254D8BB400F369BE /* questionAndEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B10FA254D8BB200F369BE /* questionAndEmail.m */; };
+		180B114825504E4700F369BE /* changePassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B114725504E4600F369BE /* changePassword.m */; };
+		180B114E2550D61D00F369BE /* sendCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B114D2550D61D00F369BE /* sendCodeViewController.m */; };
+		180B11542551108500F369BE /* sendCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B11532551108500F369BE /* sendCodeView.m */; };
+		180B115B25513A0800F369BE /* sendCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B115A25513A0700F369BE /* sendCodeModel.m */; };
 		1A0AC5F8252B235800221514 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0AC5F7252B235800221514 /* LoginViewController.swift */; };
 		1A0E15ED24E4D3FA00C39B4D /* CQUPTMapBeforeSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E15EC24E4D3FA00C39B4D /* CQUPTMapBeforeSearchCell.m */; };
 		1A0E15F024E4EADF00C39B4D /* CQUPTMapSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E15EF24E4EADF00C39B4D /* CQUPTMapSearchItem.m */; };
@@ -499,6 +518,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180B106525472C4200F369BE /* SelfSafeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelfSafeView.h; sourceTree = "<group>"; };
+		180B106625472C4200F369BE /* SelfSafeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfSafeView.m; sourceTree = "<group>"; };
+		180B106F2547392E00F369BE /* selfSafeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = selfSafeViewController.h; sourceTree = "<group>"; };
+		180B10702547392E00F369BE /* selfSafeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = selfSafeViewController.m; sourceTree = "<group>"; };
+		180B107B25479E9200F369BE /* ChangePwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePwdViewController.h; sourceTree = "<group>"; };
+		180B107C25479E9200F369BE /* ChangePwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePwdViewController.m; sourceTree = "<group>"; };
+		180B108125479EE800F369BE /* ResetPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetPwdViewController.h; sourceTree = "<group>"; };
+		180B108225479EE800F369BE /* ResetPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetPwdViewController.m; sourceTree = "<group>"; };
+		180B108725479F0F00F369BE /* SetQuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetQuestionViewController.h; sourceTree = "<group>"; };
+		180B108825479F0F00F369BE /* SetQuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetQuestionViewController.m; sourceTree = "<group>"; };
+		180B108D2547B9AD00F369BE /* ResetPwdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetPwdView.h; sourceTree = "<group>"; };
+		180B108E2547B9AD00F369BE /* ResetPwdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetPwdView.m; sourceTree = "<group>"; };
+		180B10962547C95F00F369BE /* SetQuestionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetQuestionView.h; sourceTree = "<group>"; };
+		180B10972547C95F00F369BE /* SetQuestionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetQuestionView.m; sourceTree = "<group>"; };
+		180B10AE2549084100F369BE /* QuestionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionView.h; sourceTree = "<group>"; };
+		180B10AF2549084100F369BE /* QuestionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionView.m; sourceTree = "<group>"; };
+		180B10B5254A769600F369BE /* questionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = questionModel.h; sourceTree = "<group>"; };
+		180B10B6254A769600F369BE /* questionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = questionModel.m; sourceTree = "<group>"; };
+		180B10C7254B18FE00F369BE /* setEmailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = setEmailViewController.h; sourceTree = "<group>"; };
+		180B10C8254B18FE00F369BE /* setEmailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = setEmailViewController.m; sourceTree = "<group>"; };
+		180B10CD254B196F00F369BE /* setEmail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = setEmail.h; sourceTree = "<group>"; };
+		180B10CE254B196F00F369BE /* setEmail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = setEmail.m; sourceTree = "<group>"; };
+		180B10D3254BF6F700F369BE /* safePopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = safePopView.h; sourceTree = "<group>"; };
+		180B10D4254BF6F700F369BE /* safePopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = safePopView.m; sourceTree = "<group>"; };
+		180B10DC254C70F900F369BE /* questionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = questionItem.h; sourceTree = "<group>"; };
+		180B10DD254C70F900F369BE /* questionItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = questionItem.m; sourceTree = "<group>"; };
+		180B10EA254D14AB00F369BE /* questionAndAnswerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = questionAndAnswerModel.h; sourceTree = "<group>"; };
+		180B10EB254D14AB00F369BE /* questionAndAnswerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = questionAndAnswerModel.m; sourceTree = "<group>"; };
+		180B10F9254D8BB200F369BE /* questionAndEmail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = questionAndEmail.h; sourceTree = "<group>"; };
+		180B10FA254D8BB200F369BE /* questionAndEmail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = questionAndEmail.m; sourceTree = "<group>"; };
+		180B114625504E4600F369BE /* changePassword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = changePassword.h; sourceTree = "<group>"; };
+		180B114725504E4600F369BE /* changePassword.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = changePassword.m; sourceTree = "<group>"; };
+		180B114C2550D61D00F369BE /* sendCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sendCodeViewController.h; sourceTree = "<group>"; };
+		180B114D2550D61D00F369BE /* sendCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sendCodeViewController.m; sourceTree = "<group>"; };
+		180B11522551108500F369BE /* sendCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sendCodeView.h; sourceTree = "<group>"; };
+		180B11532551108500F369BE /* sendCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sendCodeView.m; sourceTree = "<group>"; };
+		180B115925513A0700F369BE /* sendCodeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sendCodeModel.h; sourceTree = "<group>"; };
+		180B115A25513A0700F369BE /* sendCodeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sendCodeModel.m; sourceTree = "<group>"; };
 		1A0AC5F6252B235800221514 /* CyxbsMobile2019_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CyxbsMobile2019_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		1A0AC5F7252B235800221514 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1A0E15EB24E4D3FA00C39B4D /* CQUPTMapBeforeSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQUPTMapBeforeSearchCell.h; sourceTree = "<group>"; };
@@ -1338,6 +1395,131 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180B106325472BE500F369BE /* Safe */ = {
+			isa = PBXGroup;
+			children = (
+				180B10B4254A766900F369BE /* Model */,
+				180B106425472C2600F369BE /* View */,
+			);
+			path = Safe;
+			sourceTree = "<group>";
+		};
+		180B106425472C2600F369BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				180B10F3254D1D5800F369BE /* 主界面 */,
+				180B10F2254D1D3000F369BE /* 绑定邮箱 */,
+				180B10F0254D1CB400F369BE /* 修改密码 */,
+				180B10F1254D1CF900F369BE /* 设置密保 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		180B10B4254A766900F369BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				180B1158255119FE00F369BE /* 绑定邮箱 */,
+				180B114525504E0E00F369BE /* 修改密码 */,
+				180B10F8254D8B9500F369BE /* 主界面 */,
+				180B10F4254D1D7A00F369BE /* 设置密保 */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		180B10F0254D1CB400F369BE /* 修改密码 */ = {
+			isa = PBXGroup;
+			children = (
+				180B107B25479E9200F369BE /* ChangePwdViewController.h */,
+				180B107C25479E9200F369BE /* ChangePwdViewController.m */,
+				180B108125479EE800F369BE /* ResetPwdViewController.h */,
+				180B108225479EE800F369BE /* ResetPwdViewController.m */,
+				180B108D2547B9AD00F369BE /* ResetPwdView.h */,
+				180B108E2547B9AD00F369BE /* ResetPwdView.m */,
+			);
+			path = "修改密码";
+			sourceTree = "<group>";
+		};
+		180B10F1254D1CF900F369BE /* 设置密保 */ = {
+			isa = PBXGroup;
+			children = (
+				180B108725479F0F00F369BE /* SetQuestionViewController.h */,
+				180B108825479F0F00F369BE /* SetQuestionViewController.m */,
+				180B10962547C95F00F369BE /* SetQuestionView.h */,
+				180B10972547C95F00F369BE /* SetQuestionView.m */,
+				180B10AE2549084100F369BE /* QuestionView.h */,
+				180B10AF2549084100F369BE /* QuestionView.m */,
+			);
+			path = "设置密保";
+			sourceTree = "<group>";
+		};
+		180B10F2254D1D3000F369BE /* 绑定邮箱 */ = {
+			isa = PBXGroup;
+			children = (
+				180B10C7254B18FE00F369BE /* setEmailViewController.h */,
+				180B10C8254B18FE00F369BE /* setEmailViewController.m */,
+				180B10CD254B196F00F369BE /* setEmail.h */,
+				180B10CE254B196F00F369BE /* setEmail.m */,
+				180B114C2550D61D00F369BE /* sendCodeViewController.h */,
+				180B114D2550D61D00F369BE /* sendCodeViewController.m */,
+				180B11522551108500F369BE /* sendCodeView.h */,
+				180B11532551108500F369BE /* sendCodeView.m */,
+			);
+			path = "绑定邮箱";
+			sourceTree = "<group>";
+		};
+		180B10F3254D1D5800F369BE /* 主界面 */ = {
+			isa = PBXGroup;
+			children = (
+				180B106F2547392E00F369BE /* selfSafeViewController.h */,
+				180B10702547392E00F369BE /* selfSafeViewController.m */,
+				180B106525472C4200F369BE /* SelfSafeView.h */,
+				180B106625472C4200F369BE /* SelfSafeView.m */,
+				180B10D3254BF6F700F369BE /* safePopView.h */,
+				180B10D4254BF6F700F369BE /* safePopView.m */,
+			);
+			path = "主界面";
+			sourceTree = "<group>";
+		};
+		180B10F4254D1D7A00F369BE /* 设置密保 */ = {
+			isa = PBXGroup;
+			children = (
+				180B10B5254A769600F369BE /* questionModel.h */,
+				180B10B6254A769600F369BE /* questionModel.m */,
+				180B10DC254C70F900F369BE /* questionItem.h */,
+				180B10DD254C70F900F369BE /* questionItem.m */,
+				180B10EA254D14AB00F369BE /* questionAndAnswerModel.h */,
+				180B10EB254D14AB00F369BE /* questionAndAnswerModel.m */,
+			);
+			path = "设置密保";
+			sourceTree = "<group>";
+		};
+		180B10F8254D8B9500F369BE /* 主界面 */ = {
+			isa = PBXGroup;
+			children = (
+				180B10F9254D8BB200F369BE /* questionAndEmail.h */,
+				180B10FA254D8BB200F369BE /* questionAndEmail.m */,
+			);
+			path = "主界面";
+			sourceTree = "<group>";
+		};
+		180B114525504E0E00F369BE /* 修改密码 */ = {
+			isa = PBXGroup;
+			children = (
+				180B114625504E4600F369BE /* changePassword.h */,
+				180B114725504E4600F369BE /* changePassword.m */,
+			);
+			path = "修改密码";
+			sourceTree = "<group>";
+		};
+		180B1158255119FE00F369BE /* 绑定邮箱 */ = {
+			isa = PBXGroup;
+			children = (
+				180B115925513A0700F369BE /* sendCodeModel.h */,
+				180B115A25513A0700F369BE /* sendCodeModel.m */,
+			);
+			path = "绑定邮箱";
+			sourceTree = "<group>";
+		};
 		1A0AC5F5252B234700221514 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -1375,6 +1557,7 @@
 			isa = PBXGroup;
 			children = (
 				1A31062E23770C7300A56468 /* Mine.xcassets */,
+				180B106325472BE500F369BE /* Safe */,
 				1AEF3103245BFF3D00487D40 /* MyGoods */,
 				1A344BB123E96AB80014A3B4 /* About */,
 				1A16591423D84AC00039BA46 /* Mine_QA */,
@@ -3840,6 +4023,7 @@
 				EEA301BD2468579400A8DB26 /* GPA.m in Sources */,
 				DB34EB3B239BD4550052B65E /* WeekChooseButton.m in Sources */,
 				EE75BFCA23F5884100208039 /* ScoreTwoTitleView.m in Sources */,
+				180B10712547392E00F369BE /* selfSafeViewController.m in Sources */,
 				EE75BFBE23F5884100208039 /* SCGenericChart.m in Sources */,
 				EE75BFA423F5884100208039 /* ExamArrangeDataItem.m in Sources */,
 				1AFD151C237D81DD004D9CEA /* EditMyInfoPresenter.m in Sources */,
@@ -3849,6 +4033,7 @@
 				D03E59D223DB30AA00E0F34D /* QAAskNextStepView.m in Sources */,
 				1AD038D423F9471A00D5C90E /* MineQAMyAnswerItem.m in Sources */,
 				EEA301C924685EBF00A8DB26 /* GPAItem.m in Sources */,
+				180B10B7254A769700F369BE /* questionModel.m in Sources */,
 				D0101F62243587A1004337ED /* UIScrollView+GKGestureHandle.m in Sources */,
 				D0101D5B2433C885004337ED /* SDMaskGuidBGView.m in Sources */,
 				1A30F40923D4A04C00FBBD83 /* IntegralStoreCell.m in Sources */,
@@ -3886,12 +4071,14 @@
 				AA49098924F3BF5A007CB3BC /* TransitionManager.m in Sources */,
 				DB34EB28239BD4550052B65E /* DetailLessonController.m in Sources */,
 				AA57588924EE739F002F6F6D /* TimeBtnSelectedBackView.m in Sources */,
+				180B108F2547B9AD00F369BE /* ResetPwdView.m in Sources */,
 				D0101D592433C885004337ED /* SDMaskController.m in Sources */,
 				1A5A5EF12361A82E00543BAE /* UserItemTool.m in Sources */,
 				1A46C34223DC6CE2005DC1F3 /* MyAnswerDraftCell.m in Sources */,
 				EE75BFC223F5884100208039 /* SCBarChart.m in Sources */,
 				1A30F39D23D0B86400FBBD83 /* IntegralStorePercentDrivenController.m in Sources */,
 				1AB2E58524E2D41B004B4067 /* CQUPTMapPlaceRect.m in Sources */,
+				180B108325479EE800F369BE /* ResetPwdViewController.m in Sources */,
 				DB34EACF239BD4550052B65E /* WYCClassAndRemindDataModel.m in Sources */,
 				AA289B1524F29F7600FDF70C /* ClassSchedulPresentingAnimater.m in Sources */,
 				1A141374235F524B0001417E /* NSNull+Helper.m in Sources */,
@@ -3910,6 +4097,7 @@
 				D03E59D323DB30AA00E0F34D /* QAAskViewController.m in Sources */,
 				EEA301D7246866E400A8DB26 /* BannerModel.m in Sources */,
 				D026A81723D50421001A4774 /* QADetailViewController.m in Sources */,
+				180B10DE254C70F900F369BE /* questionItem.m in Sources */,
 				EE8234E224673FE800F6B4AE /* VolunteerItem.m in Sources */,
 				DB4064F82466D889006CE5BC /* DLWeekButton.m in Sources */,
 				EEA301C624685C8E00A8DB26 /* TermGrade.m in Sources */,
@@ -3935,6 +4123,7 @@
 				1A1E869723C8D1DE00321367 /* CheckInBar.m in Sources */,
 				EE75BF8F23F5884100208039 /* DiscoverViewController.m in Sources */,
 				EE8234E124673FE800F6B4AE /* VolunteeringEventItem.m in Sources */,
+				180B10C9254B18FF00F369BE /* setEmailViewController.m in Sources */,
 				1AEF310F245C022400487D40 /* MyGoodsViewController.m in Sources */,
 				1A30F3FF23D4910900FBBD83 /* IntegralStorePresenter.m in Sources */,
 				1A1691F82430DEE70076EDC7 /* ClassScheduleTabBarView.m in Sources */,
@@ -3943,7 +4132,9 @@
 				EE75BFB623F5884100208039 /* NewDetailViewController.m in Sources */,
 				1A141321235F521C0001417E /* BaseViewController.m in Sources */,
 				D0101F6A243587A1004337ED /* GKPanGestureRecognizer.m in Sources */,
+				180B10CF254B196F00F369BE /* setEmail.m in Sources */,
 				1A810BAD24E2A17400E79126 /* CQUPTMapPresenter.m in Sources */,
+				180B107D25479E9200F369BE /* ChangePwdViewController.m in Sources */,
 				DB4065032466D889006CE5BC /* DLReminderView.m in Sources */,
 				DB4064F72466D889006CE5BC /* DLReminderSetDetailVC.m in Sources */,
 				AA9ABE9024EB63BF00D16BE0 /* ClassDetailViewShower.m in Sources */,
@@ -3967,6 +4158,7 @@
 				1AE1374624DEE79F000F2C30 /* CQUPTMapViewController.m in Sources */,
 				AA49098624F3B6B4007CB3BC /* ClassSchedulInterController.m in Sources */,
 				1A141322235F521C0001417E /* BaseNavigationController.m in Sources */,
+				180B10D5254BF6F800F369BE /* safePopView.m in Sources */,
 				EE75BF9D23F5884100208039 /* FinderView.m in Sources */,
 				1A810BB924E2A5C800E79126 /* CQUPTMapHotPlaceItem.m in Sources */,
 				D0101F69243587A1004337ED /* GKPhotoView.m in Sources */,
@@ -4022,11 +4214,13 @@
 				D0101D38243387ED004337ED /* QABaseViewController.m in Sources */,
 				EE75BFB823F5884100208039 /* DownFileDetailCellTableViewCell.m in Sources */,
 				1A0E15ED24E4D3FA00C39B4D /* CQUPTMapBeforeSearchCell.m in Sources */,
+				180B10FB254D8BB400F369BE /* questionAndEmail.m in Sources */,
 				1A46C34823DC6F58005DC1F3 /* MyResponseRecievedCell.m in Sources */,
 				1A30F39A23D09CD800FBBD83 /* IntegralStoreContentView.m in Sources */,
 				EE75BFAE23F5884100208039 /* PeopleListCellTableViewCell.m in Sources */,
 				1ABE8026238D01EC00E88C4E /* CheckInViewController.m in Sources */,
 				1A4022FB244C9F6B000F8524 /* EmptyClassViewController.m in Sources */,
+				180B10EC254D14AC00F369BE /* questionAndAnswerModel.m in Sources */,
 				DB4064FA2466D889006CE5BC /* DLTextFiled.m in Sources */,
 				1A5E914B24EAEF45004BF5C4 /* CQUPTMapImageLayout.m in Sources */,
 				1A79FCD624EAEAA700CBB124 /* CQUPTMapMoreImageViewController.m in Sources */,
@@ -4038,6 +4232,7 @@
 				1AFD1519237D81AF004D9CEA /* EditMyInfoViewController.m in Sources */,
 				DB34EB21239BD4550052B65E /* DetailRemindViewController.m in Sources */,
 				DB34EB29239BD4550052B65E /* WeekChooseViewController.m in Sources */,
+				180B114825504E4700F369BE /* changePassword.m in Sources */,
 				1A21CD5224288BEC008B2EA7 /* SchoolBusModel.m in Sources */,
 				1AD038C423F6C7FF00D5C90E /* MineQAPresenter.m in Sources */,
 				D0101F65243587A1004337ED /* GKPhoto.m in Sources */,
@@ -4071,11 +4266,13 @@
 				DB34EB3D239BD4550052B65E /* ORWInputTextView.m in Sources */,
 				DB34EB23239BD4550052B65E /* TimeChooseViewController.m in Sources */,
 				EEA301D2246862E000A8DB26 /* TermGrades.m in Sources */,
+				180B10B02549084100F369BE /* QuestionView.m in Sources */,
 				1AB2E59124E3CFB6004B4067 /* CQUPTMapStarPlaceItem.m in Sources */,
 				1AFD153223819FBD004D9CEA /* EditMyInfoTransitionAnimator.m in Sources */,
 				D05C04D023E5E047009A2E63 /* QAAskIntegralPickerView.m in Sources */,
 				AA9ABE9324EB8ADB00D16BE0 /* LessonViewForAWeek.m in Sources */,
 				1AC2550523C9AB3700DF0475 /* CheckedInDot.m in Sources */,
+				180B108925479F0F00F369BE /* SetQuestionViewController.m in Sources */,
 				D0101F63243587A1004337ED /* GKScrollView.m in Sources */,
 				1AEF3122245E9D5300487D40 /* MyGoodsItem.m in Sources */,
 				DB34EB38239BD4550052B65E /* MainView.m in Sources */,
@@ -4092,6 +4289,7 @@
 				EEEBD28A248E5D8000A2DDB1 /* VolunteerView.m in Sources */,
 				DB34EB26239BD4550052B65E /* DetailPageController.m in Sources */,
 				D026A80423D4E054001A4774 /* QAListSegmentView.m in Sources */,
+				180B114E2550D61D00F369BE /* sendCodeViewController.m in Sources */,
 				AA5D39B824F74A9800AB2DF5 /* LocalNotiManager.m in Sources */,
 				EE75BFA223F5884100208039 /* ExamArrangeModel.m in Sources */,
 				D0101F64243587A1004337ED /* GKPhotoBrowser.m in Sources */,
@@ -4112,6 +4310,7 @@
 				DB34EADA239BD4550052B65E /* RemindNotification.m in Sources */,
 				EE75BFC923F5884100208039 /* DetailScorePerYearCell.m in Sources */,
 				EEA301DD2468680800A8DB26 /* BannerData.m in Sources */,
+				180B10982547C96000F369BE /* SetQuestionView.m in Sources */,
 				1A9B766C235F50A600725937 /* AppDelegate.m in Sources */,
 				EE75BFA623F5884100208039 /* PointAndDottedLineView.m in Sources */,
 				EE75BFBB23F5884100208039 /* SCTool.m in Sources */,
@@ -4121,6 +4320,7 @@
 				D0101D582433C885004337ED /* UIResponder+SDMask.m in Sources */,
 				EE75BFAC23F5884100208039 /* ClassmateItem.m in Sources */,
 				1AD6D1BF23E161100099A7E2 /* MineModel.m in Sources */,
+				180B106725472C4200F369BE /* SelfSafeView.m in Sources */,
 				EE75BFC623F5884100208039 /* ScoreViewController.m in Sources */,
 				DB4065002466D889006CE5BC /* DLHistodyButton.m in Sources */,
 				1A810BB224E2A1E400E79126 /* CQUPTMapModel.m in Sources */,
@@ -4133,6 +4333,7 @@
 				D0101D5D2433C885004337ED /* SDMaskView.m in Sources */,
 				1A14136C235F524B0001417E /* UIViewController+BackButtonHandler.m in Sources */,
 				DB34EB2E239BD4550052B65E /* RemindTableViewCell.m in Sources */,
+				180B115B25513A0800F369BE /* sendCodeModel.m in Sources */,
 				EE75BFB523F5884100208039 /* NewsViewController.m in Sources */,
 				1A141368235F524B0001417E /* HttpClient.m in Sources */,
 				1AB2E59F24E426CE004B4067 /* CQUPTMapSearchView.m in Sources */,
@@ -4141,6 +4342,7 @@
 				EE8234DB24673FE800F6B4AE /* QueryViewController.m in Sources */,
 				1A79FCCD24E81E3300CBB124 /* CQUPTMapPlaceDetailItem.m in Sources */,
 				1AFD151F237D81F1004D9CEA /* EditMyInfoModel.m in Sources */,
+				180B11542551108500F369BE /* sendCodeView.m in Sources */,
 				AAAA1D9024FE39F500DB9A81 /* NextLessonFinder.m in Sources */,
 				1AD038DD23FA7B0E00D5C90E /* MineQARecommentItem.m in Sources */,
 				D0101D572433C885004337ED /* NSLayoutConstraint+SDMask.m in Sources */,

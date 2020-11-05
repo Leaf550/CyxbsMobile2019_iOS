@@ -108,8 +108,8 @@
     }
     
     
-    
-    [_titleBtnArray firstObject].selected = YES;
+    //修改bug：第一次加载时，选中第一个页面，字体是选中效果
+    [self clickTitleBtn:[_titleBtnArray firstObject]];
     _titleView.backgroundColor = _titleBackgroundColor;
     [self addSubview:_titleView];
     
@@ -152,11 +152,13 @@
     //滑块第一部分的位移变化
     _sliderLinePart1.frame = CGRectMake(offSetX / self.frame.size.width * _titleBtnWidth + (_titleBtnWidth - _sliderWidth) / 2.0, _titleHeight - _sliderHeight, _sliderWidth, _sliderHeight);
     
-    
+    //修改bug：滑动时，字体跟着改变
     if (currentIndex != _currentIndex) {
         _titleBtnArray[_currentIndex].selected = NO;
+        _titleBtnArray[_currentIndex].titleLabel.font = _titleFont;
         _currentIndex = currentIndex;
         _titleBtnArray[_currentIndex].selected = YES;
+        _titleBtnArray[_currentIndex].titleLabel.font = _selectedTitleFont;
 //
 //        CAKeyframeAnimation *scale = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
 //        NSArray *shapes = @[@1.1, @1.2, @1.2, @1.2, @1.1, @1];
