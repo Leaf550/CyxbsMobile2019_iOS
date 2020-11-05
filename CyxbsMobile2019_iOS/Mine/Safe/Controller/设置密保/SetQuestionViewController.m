@@ -30,8 +30,14 @@
     setquestionView.delegate = self;
     setquestionView.textView.delegate = self;
     setquestionView.placeholderLabMore.hidden = YES;
+    ///问题Label增加手势，点击后弹出问题列表
     UITapGestureRecognizer *tapRecognizer=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doClick:)];
     [setquestionView.questionLabel addGestureRecognizer:tapRecognizer];
+    
+    ///页面增加手势，点击后收回问题列表
+    UITapGestureRecognizer *disMissTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(disMiss)];
+    [self.view addGestureRecognizer:disMissTap];
+    
     [self.view addSubview:setquestionView];
     _setquestionView = setquestionView;
     
@@ -42,6 +48,10 @@
     ///实时更新Label里的问题
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showUpload) name:@"changeTitle" object:nil];
     
+}
+
+- (void)disMiss {
+    [_questionView disMissView];
 }
 
 #pragma mark - setquestionView的代理

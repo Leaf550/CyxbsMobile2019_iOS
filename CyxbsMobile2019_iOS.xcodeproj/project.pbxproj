@@ -149,6 +149,7 @@
 		1AD038DD23FA7B0E00D5C90E /* MineQARecommentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD038DC23FA7B0E00D5C90E /* MineQARecommentItem.m */; };
 		1AD6D1BF23E161100099A7E2 /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD6D1BE23E161100099A7E2 /* MineModel.m */; };
 		1AD6D1C223E1636D0099A7E2 /* MineQADataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD6D1C123E1636D0099A7E2 /* MineQADataItem.m */; };
+		1ADB6A10254BE2CC00C8CA9A /* FindPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADB6A0F254BE2CC00C8CA9A /* FindPasswordView.swift */; };
 		1ADFA1AA23841CB700E97365 /* EditMyInfoPercentDrivenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADFA1A923841CB700E97365 /* EditMyInfoPercentDrivenController.m */; };
 		1AE1374624DEE79F000F2C30 /* CQUPTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1374524DEE79F000F2C30 /* CQUPTMapViewController.m */; };
 		1AE1374924DEEA62000F2C30 /* CQUPTMapContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1374824DEEA62000F2C30 /* CQUPTMapContentView.m */; };
@@ -800,6 +801,7 @@
 		1AD6D1BE23E161100099A7E2 /* MineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineModel.m; sourceTree = "<group>"; };
 		1AD6D1C023E1636D0099A7E2 /* MineQADataItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineQADataItem.h; sourceTree = "<group>"; };
 		1AD6D1C123E1636D0099A7E2 /* MineQADataItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineQADataItem.m; sourceTree = "<group>"; };
+		1ADB6A0F254BE2CC00C8CA9A /* FindPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordView.swift; sourceTree = "<group>"; };
 		1ADFA1A823841CB700E97365 /* EditMyInfoPercentDrivenController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditMyInfoPercentDrivenController.h; sourceTree = "<group>"; };
 		1ADFA1A923841CB700E97365 /* EditMyInfoPercentDrivenController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditMyInfoPercentDrivenController.m; sourceTree = "<group>"; };
 		1AE1374424DEE79F000F2C30 /* CQUPTMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQUPTMapViewController.h; sourceTree = "<group>"; };
@@ -1398,6 +1400,7 @@
 		180B106325472BE500F369BE /* Safe */ = {
 			isa = PBXGroup;
 			children = (
+				180B11832553878100F369BE /* Controller */,
 				180B10B4254A766900F369BE /* Model */,
 				180B106425472C2600F369BE /* View */,
 			);
@@ -1418,9 +1421,9 @@
 		180B10B4254A766900F369BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				180B10F8254D8B9500F369BE /* 主界面 */,
 				180B1158255119FE00F369BE /* 绑定邮箱 */,
 				180B114525504E0E00F369BE /* 修改密码 */,
-				180B10F8254D8B9500F369BE /* 主界面 */,
 				180B10F4254D1D7A00F369BE /* 设置密保 */,
 			);
 			path = Model;
@@ -1429,10 +1432,6 @@
 		180B10F0254D1CB400F369BE /* 修改密码 */ = {
 			isa = PBXGroup;
 			children = (
-				180B107B25479E9200F369BE /* ChangePwdViewController.h */,
-				180B107C25479E9200F369BE /* ChangePwdViewController.m */,
-				180B108125479EE800F369BE /* ResetPwdViewController.h */,
-				180B108225479EE800F369BE /* ResetPwdViewController.m */,
 				180B108D2547B9AD00F369BE /* ResetPwdView.h */,
 				180B108E2547B9AD00F369BE /* ResetPwdView.m */,
 			);
@@ -1442,8 +1441,6 @@
 		180B10F1254D1CF900F369BE /* 设置密保 */ = {
 			isa = PBXGroup;
 			children = (
-				180B108725479F0F00F369BE /* SetQuestionViewController.h */,
-				180B108825479F0F00F369BE /* SetQuestionViewController.m */,
 				180B10962547C95F00F369BE /* SetQuestionView.h */,
 				180B10972547C95F00F369BE /* SetQuestionView.m */,
 				180B10AE2549084100F369BE /* QuestionView.h */,
@@ -1455,12 +1452,8 @@
 		180B10F2254D1D3000F369BE /* 绑定邮箱 */ = {
 			isa = PBXGroup;
 			children = (
-				180B10C7254B18FE00F369BE /* setEmailViewController.h */,
-				180B10C8254B18FE00F369BE /* setEmailViewController.m */,
 				180B10CD254B196F00F369BE /* setEmail.h */,
 				180B10CE254B196F00F369BE /* setEmail.m */,
-				180B114C2550D61D00F369BE /* sendCodeViewController.h */,
-				180B114D2550D61D00F369BE /* sendCodeViewController.m */,
 				180B11522551108500F369BE /* sendCodeView.h */,
 				180B11532551108500F369BE /* sendCodeView.m */,
 			);
@@ -1470,8 +1463,6 @@
 		180B10F3254D1D5800F369BE /* 主界面 */ = {
 			isa = PBXGroup;
 			children = (
-				180B106F2547392E00F369BE /* selfSafeViewController.h */,
-				180B10702547392E00F369BE /* selfSafeViewController.m */,
 				180B106525472C4200F369BE /* SelfSafeView.h */,
 				180B106625472C4200F369BE /* SelfSafeView.m */,
 				180B10D3254BF6F700F369BE /* safePopView.h */,
@@ -1518,6 +1509,57 @@
 				180B115A25513A0700F369BE /* sendCodeModel.m */,
 			);
 			path = "绑定邮箱";
+			sourceTree = "<group>";
+		};
+		180B11832553878100F369BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				180B118A255387D900F369BE /* 设置密保 */,
+				180B1189255387BF00F369BE /* 修改密码 */,
+				180B11882553879E00F369BE /* 绑定邮箱 */,
+				180B11842553878C00F369BE /* 主界面 */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		180B11842553878C00F369BE /* 主界面 */ = {
+			isa = PBXGroup;
+			children = (
+				180B106F2547392E00F369BE /* selfSafeViewController.h */,
+				180B10702547392E00F369BE /* selfSafeViewController.m */,
+			);
+			path = "主界面";
+			sourceTree = "<group>";
+		};
+		180B11882553879E00F369BE /* 绑定邮箱 */ = {
+			isa = PBXGroup;
+			children = (
+				180B10C7254B18FE00F369BE /* setEmailViewController.h */,
+				180B10C8254B18FE00F369BE /* setEmailViewController.m */,
+				180B114C2550D61D00F369BE /* sendCodeViewController.h */,
+				180B114D2550D61D00F369BE /* sendCodeViewController.m */,
+			);
+			path = "绑定邮箱";
+			sourceTree = "<group>";
+		};
+		180B1189255387BF00F369BE /* 修改密码 */ = {
+			isa = PBXGroup;
+			children = (
+				180B107B25479E9200F369BE /* ChangePwdViewController.h */,
+				180B107C25479E9200F369BE /* ChangePwdViewController.m */,
+				180B108125479EE800F369BE /* ResetPwdViewController.h */,
+				180B108225479EE800F369BE /* ResetPwdViewController.m */,
+			);
+			path = "修改密码";
+			sourceTree = "<group>";
+		};
+		180B118A255387D900F369BE /* 设置密保 */ = {
+			isa = PBXGroup;
+			children = (
+				180B108725479F0F00F369BE /* SetQuestionViewController.h */,
+				180B108825479F0F00F369BE /* SetQuestionViewController.m */,
+			);
+			path = "设置密保";
 			sourceTree = "<group>";
 		};
 		1A0AC5F5252B234700221514 /* Swift */ = {
@@ -1987,6 +2029,7 @@
 			isa = PBXGroup;
 			children = (
 				1A0AC5F7252B235800221514 /* LoginViewController.swift */,
+				1ADB6A0F254BE2CC00C8CA9A /* FindPasswordView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4344,6 +4387,7 @@
 				1AFD151F237D81F1004D9CEA /* EditMyInfoModel.m in Sources */,
 				180B11542551108500F369BE /* sendCodeView.m in Sources */,
 				AAAA1D9024FE39F500DB9A81 /* NextLessonFinder.m in Sources */,
+				1ADB6A10254BE2CC00C8CA9A /* FindPasswordView.swift in Sources */,
 				1AD038DD23FA7B0E00D5C90E /* MineQARecommentItem.m in Sources */,
 				D0101D572433C885004337ED /* NSLayoutConstraint+SDMask.m in Sources */,
 				EE75BFBF23F5884100208039 /* SCChartLabel.m in Sources */,
