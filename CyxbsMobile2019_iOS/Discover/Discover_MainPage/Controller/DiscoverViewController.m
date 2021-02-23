@@ -74,6 +74,8 @@ typedef NS_ENUM(NSUInteger, LoginStates) {
 @property (nonatomic, assign)int classTabbarHeight;
 @property(nonatomic, assign)int classTabbarCornerRadius;
 
+@property(nonatomic,strong)UIWindow *window;
+
 @end
 
 @implementation DiscoverViewController
@@ -118,7 +120,7 @@ typedef NS_ENUM(NSUInteger, LoginStates) {
         ((ClassTabBar *)(self.tabBarController.tabBar)).classScheduleTabBarView = classTabBarView;
         ((ClassTabBar *)(self.tabBarController.tabBar)).classScheduleTabBarView.userInteractionEnabled = YES;
             
-        if([[NSUserDefaults standardUserDefaults] objectForKey:@"Mine_LaunchingWithClassScheduleView"]){
+        if(![[NSUserDefaults standardUserDefaults] objectForKey:@"Mine_LaunchingWithClassScheduleView"]&&classTabBarView.mySchedul!=nil){
             [classTabBarView.mySchedul setModalPresentationStyle:(UIModalPresentationCustom)];
             classTabBarView.mySchedul.fakeBar.alpha = 0;
             [classTabBarView.viewController presentViewController:classTabBarView.mySchedul animated:YES completion:nil];
@@ -191,8 +193,21 @@ typedef NS_ENUM(NSUInteger, LoginStates) {
     }];
 }
 - (void)presentToLogin {
+//    LoginViewController *loginVC = [[LoginViewController alloc] init];
+  //  UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginVC];
+   // [self presentViewController:nav animated:NO completion:nil];
+//   [self presentViewController:loginVC animated:NO completion:nil];
     LoginViewController *loginVC = [[LoginViewController alloc] init];
-    [self presentViewController:loginVC animated:NO completion:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    navController.modalPresentationStyle = UIModalPresentationFullScreen;
+    UITabBarController *tabBarVC = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+    if (tabBarVC.presentedViewController) {
+        [tabBarVC dismissViewControllerAnimated:YES completion:^{
+            [tabBarVC presentViewController:navController animated:YES completion:nil];
+        }];
+    } else {
+        [tabBarVC presentViewController:navController animated:YES completion:nil];
+    }
     if (self.loginStatus == LoginTimeOut) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"太久没有登录掌邮了..." message:@"\n重新登录试试吧" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"好哒！" style:UIAlertActionStyleDefault handler:nil];
@@ -204,6 +219,10 @@ typedef NS_ENUM(NSUInteger, LoginStates) {
 
 ///这里有问题
 - (void)RequestCheckinInfo {
+    if(![UserDefaultTool getStuNum]){
+        @throw [[NSException alloc] initWithName:NSInvalidArgumentException reason:@"用户学号为空" userInfo:nil];
+    }
+    
     NSDictionary *params = @{
         @"stunum": [UserDefaultTool getStuNum],
         @"idnum": [UserDefaultTool getIdNum]
@@ -678,7 +697,8 @@ typedef NS_ENUM(NSUInteger, LoginStates) {
 }
 -(void)touchNoClassAppointment {
     NSLog(@"点击了没课约");
-    WeDateViewController *vc = [[WeDateViewController alloc] initWithInfoDictArray:[@[@{@"name":@"陈剑辉",@"stuNum":@"2019211534"}] mutableCopy]];
+    UserItem *item = [[UserItem alloc] init];
+    WeDateViewController *vc = [[WeDateViewController alloc] initWithInfoDictArray:[@[@{@"name":item.realName,@"stuNum":item.stuNum}] mutableCopy]];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

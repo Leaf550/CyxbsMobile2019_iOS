@@ -23,8 +23,12 @@
 - (instancetype) init {
     if (self = [super init]) {
         _fontSize = DEFAULT_TITLE_FONTSIZE;
-        _color = DEFAULT_TITLE_COLOR;
-        self.backgroundColor = [UIColor colorWithRed:174/255.0 green:182/255.0 blue:211/255.0 alpha:0.16];
+        if (@available(iOS 11.0, *)) {
+            _color = [UIColor colorNamed:@"MGDLoginTitleColor"];
+            self.backgroundColor = [UIColor clearColor];
+        } else {
+            // Fallback on earlier versions
+        }
     }
     return self;
 }
@@ -34,7 +38,7 @@
     CGFloat titleY = (CGRectGetHeight(self.frame) - [self titleSize].height) * 0.5;
     
     CGRect titleRect = CGRectMake(titleX, titleY, [self titleSize].width, [self titleSize].height);
-    NSDictionary *attributes = @{NSFontAttributeName : [UIFont systemFontOfSize:_fontSize], NSForegroundColorAttributeName : _color};
+    NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Semibold" size:_fontSize], NSForegroundColorAttributeName : _color};
     [_title drawInRect:titleRect withAttributes:attributes];
 }
 
@@ -60,7 +64,7 @@
 
 
 - (CGSize)titleSize {
-    NSDictionary *attributes = @{NSFontAttributeName : [UIFont systemFontOfSize:_fontSize]};
+    NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Semibold" size:_fontSize]};
     CGSize size = [_title boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
     size.width = ceil(size.width);
     size.height = ceil(size.height);

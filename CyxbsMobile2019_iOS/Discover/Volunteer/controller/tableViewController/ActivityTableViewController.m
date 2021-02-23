@@ -21,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.itemsArray = [NSMutableArray array];
     [self setVolunteerActivityList];
     self.tableView.showsVerticalScrollIndicator = NO;

@@ -22,7 +22,11 @@
 
 - (instancetype) initWithFrame:(CGRect)frame {
     if ([super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor colorWithRed:242/255.0 green:243/255.0 blue:248/255.0 alpha:1.0];
+        if (@available(iOS 11.0, *)) {
+            self.backgroundColor = [UIColor colorNamed:@"MGDHeaderColor"];
+        } else {
+            // Fallback on earlier versions
+        }
         
         ///背景
         UIView *backView = [[UIView alloc] init];
@@ -30,37 +34,61 @@
         _backView = backView;
 
         ///总时长（文字）
-        UILabel *totalTime = [self LabelWithText:@"总时长" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTintColor:[UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0] AndAlpha:0.6];
-        [_backView addSubview:totalTime];
-        _totalTime = totalTime;
+        if (@available(iOS 11.0, *)) {
+            UILabel *totalTime = [self LabelWithText:@"总时长" AndFont:[UIFont fontWithName:@"PingFangSC-Light" size: 13] AndTintColor:[UIColor colorNamed:@"MGDLoginTitleColor"] AndAlpha:0.6];
+            [_backView addSubview:totalTime];
+            _totalTime = totalTime;
+        } else {
+            // Fallback on earlier versions
+        }
 
         ///总次数（文字）
-        UILabel * frequency= [self LabelWithText:@"总次数" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTintColor:[UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0] AndAlpha:0.6];
-        [_backView addSubview:frequency];
-        _frequency = frequency;
+        if (@available(iOS 11.0, *)) {
+            UILabel * frequency= [self LabelWithText:@"总次数" AndFont:[UIFont fontWithName:@"PingFangSC-Light" size: 13] AndTintColor:[UIColor colorNamed:@"MGDLoginTitleColor"] AndAlpha:0.6];
+            [_backView addSubview:frequency];
+            _frequency = frequency;
+        } else {
+            // Fallback on earlier versions
+        }
 
         ///总时长（数字）
-        UILabel *totalText = [self LabelWithText:@"" AndFont:[UIFont fontWithName:@"Impact" size: 32] AndTintColor:[UIColor colorWithRed:42/255.0 green:78/255.0 blue:132/255.0 alpha:1.0] AndAlpha:1.0];
-        totalText.textAlignment = NSTextAlignmentRight;
-        [_backView addSubview:totalText];
-        _totalText = totalText;
+        if (@available(iOS 11.0, *)) {
+            UILabel *totalText = [self LabelWithText:@"" AndFont:[UIFont fontWithName:@"Impact" size: 32] AndTintColor:[UIColor colorNamed:@"MGDTimeCellHourColor"] AndAlpha:1.0];
+            totalText.textAlignment = NSTextAlignmentRight;
+            [_backView addSubview:totalText];
+            _totalText = totalText;
+        } else {
+            // Fallback on earlier versions
+        }
 
-        UILabel *frequencyText = [self LabelWithText:@"" AndFont:[UIFont fontWithName:@"Impact" size: 32] AndTintColor:[UIColor colorWithRed:42/255.0 green:78/255.0 blue:132/255.0 alpha:1.0] AndAlpha:1.0];
-        frequencyText.textAlignment = NSTextAlignmentRight;
-        [_backView addSubview:frequencyText];
-        _frequencyText = frequencyText;
+        if (@available(iOS 11.0, *)) {
+            UILabel *frequencyText = [self LabelWithText:@"" AndFont:[UIFont fontWithName:@"Impact" size: 32] AndTintColor:[UIColor colorNamed:@"MGDTimeCellHourColor"] AndAlpha:1.0];
+            frequencyText.textAlignment = NSTextAlignmentRight;
+            [_backView addSubview:frequencyText];
+            _frequencyText = frequencyText;
+        } else {
+            // Fallback on earlier versions
+        }
 
         ///时间单位
-        UILabel *timeUnit = [self LabelWithText:@"时" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTintColor:[UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0] AndAlpha:1.0];
-        timeUnit.textAlignment = NSTextAlignmentRight;
-        [_backView addSubview:timeUnit];
-        _timeUnit = timeUnit;
+        if (@available(iOS 11.0, *)) {
+            UILabel *timeUnit = [self LabelWithText:@"时" AndFont:[UIFont fontWithName:@"PingFangSC-Medium" size: 13] AndTintColor:[UIColor colorNamed:@"MGDLoginTitleColor"] AndAlpha:1.0];
+            timeUnit.textAlignment = NSTextAlignmentRight;
+            [_backView addSubview:timeUnit];
+            _timeUnit = timeUnit;
+        } else {
+            // Fallback on earlier versions
+        }
 
         ///次数单位
-        UILabel *frequencyUnit = [self LabelWithText:@"次" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTintColor:[UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0] AndAlpha:1.0];
-        frequencyUnit.textAlignment = NSTextAlignmentRight;
-        [_backView addSubview:frequencyUnit];
-        _frequencyUnit = frequencyUnit;
+        if (@available(iOS 11.0, *)) {
+            UILabel *frequencyUnit = [self LabelWithText:@"次" AndFont:[UIFont fontWithName:@"PingFangSC-Medium" size: 13] AndTintColor:[UIColor colorNamed:@"MGDLoginTitleColor"] AndAlpha:1.0];
+            frequencyUnit.textAlignment = NSTextAlignmentRight;
+            [_backView addSubview:frequencyUnit];
+            _frequencyUnit = frequencyUnit;
+        } else {
+            // Fallback on earlier versions
+        }
 
     }
     return self;
@@ -74,17 +102,17 @@
     }];
     
     [_totalText mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_backView.mas_top).mas_offset(SCREEN_HEIGHT * 0.0179);
-        make.left.mas_equalTo(self.mas_left).mas_offset(SCREEN_WIDTH * 0.0453);
+        make.top.mas_equalTo(_backView.mas_top).mas_offset(SCREEN_HEIGHT * 0.0185);
+        make.left.mas_equalTo(self.mas_left).mas_offset(SCREEN_WIDTH * 0.0694);
         make.right.mas_equalTo(self.mas_right).mas_offset(-SCREEN_WIDTH * 0.672);
-        make.height.mas_equalTo(SCREEN_HEIGHT * 0.048);
+        make.height.mas_equalTo(SCREEN_WIDTH * 0.1893 * 39/71);
     }];
     
     [_frequencyText mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_backView.mas_top).mas_offset(SCREEN_HEIGHT * 0.0191);
+        make.top.mas_equalTo(_backView.mas_top).mas_offset(SCREEN_HEIGHT * 0.0197);
         make.left.mas_equalTo(self.mas_left).mas_offset(SCREEN_WIDTH * 0.5453);
         make.right.mas_equalTo(self.mas_right).mas_offset(-SCREEN_WIDTH * 0.2107);
-        make.height.mas_equalTo(SCREEN_HEIGHT * 0.048);
+        make.height.mas_equalTo(SCREEN_WIDTH * 0.1893 * 39/71);
     }];
     
     [_timeUnit mas_makeConstraints:^(MASConstraintMaker *make) {

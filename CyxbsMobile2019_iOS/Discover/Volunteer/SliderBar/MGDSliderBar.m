@@ -32,9 +32,13 @@
         maskLayer.frame = self.bounds;
         maskLayer.path = maskPath.CGPath;
         self.layer.mask = maskLayer;
-
-        self.backgroundColor = [UIColor colorWithRed:248.0/255.0 green:249.0/255.0 blue:252.0/255.0 alpha:1];
-        self.layer.shadowColor = [UIColor colorWithRed:174/255.0 green:182/255.0 blue:211/255.0 alpha:0.16].CGColor;
+        if (@available(iOS 11.0, *)) {
+            self.backgroundColor = [UIColor colorNamed:@"MGDBackViewColor"];
+        } else {
+            // Fallback on earlier versions
+        }
+//        self.backgroundColor = [UIColor colorWithRed:248.0/255.0 green:249.0/255.0 blue:252.0/255.0 alpha:1];
+//        self.layer.shadowColor = [UIColor colorWithRed:174/255.0 green:182/255.0 blue:211/255.0 alpha:0.16].CGColor;
         self.layer.shadowRadius = 20;
         self.layer.shadowOpacity = 1;
         
