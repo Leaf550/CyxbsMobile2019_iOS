@@ -19,7 +19,7 @@
 @property (nonatomic, strong) FindPasswordView *findPasswordView;
 @property (nonatomic, strong) YYZpopView *popView;
 @property (nonatomic, strong) UIView *backView;
-
+@property (nonatomic, strong) UIBarButtonItem *leftButton;
 
 @end
 
@@ -28,6 +28,19 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.hidden = NO;
+    //适配黑暗模式
+
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle mode = UITraitCollection.currentTraitCollection.userInterfaceStyle;
+        if (mode == UIUserInterfaceStyleDark) {
+            self.view.backgroundColor = [UIColor blackColor];
+            [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
+        }
+        else{
+            self.view.backgroundColor = [UIColor whiteColor];
+            [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+        }
+    }
 }
 -(void) clickLeftButton{
     [self.navigationController popViewControllerAnimated:YES];
@@ -42,6 +55,16 @@
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"ㄑ忘记密码" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftButton)];
     [leftButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica-Bold" size:21.0], NSFontAttributeName,
     [UIColor colorWithRed:21/255.0 green:49/255.0 blue:88/255.0 alpha:1.0], NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle mode = UITraitCollection.currentTraitCollection.userInterfaceStyle;
+        if (mode == UIUserInterfaceStyleDark) {
+            [leftButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica-Bold" size:21.0], NSFontAttributeName,
+            [UIColor whiteColor], NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
+        }
+        else{
+            //亮色模式
+        }
+    }
     self.navigationItem.leftBarButtonItem =leftButton;
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     
