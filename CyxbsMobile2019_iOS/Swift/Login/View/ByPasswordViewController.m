@@ -15,12 +15,13 @@
 #define kRateX [UIScreen mainScreen].bounds.size.width/375   //以iPhoneX为基准
 #define kRateY [UIScreen mainScreen].bounds.size.height/812  //以iPhoneX为基准
 
-@interface ByPasswordViewController ()
+@interface ByPasswordViewController ()<UITextFieldDelegate, UITextViewDelegate>
 
 @property(nonatomic, weak)UITextView *tf;
 @property(nonatomic, weak) UIButton *saveBtn;
 @property(nonatomic, weak)UILabel *placeHolder;
-@property(nonatomic, weak) UIButton *btn2;
+@property(nonatomic, strong) UIButton *btn2;
+@property(nonatomic, strong) UIButton *btn;
 @property(nonatomic, weak) UILabel *lable3;
 
 //@property(nonatomic, weak) UIButton *btn;
@@ -32,6 +33,15 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = NO;
+   //适配黑暗模式
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle mode = UITraitCollection.currentTraitCollection.userInterfaceStyle;
+        if (mode == UIUserInterfaceStyleDark) {
+            self.view.backgroundColor = [UIColor blackColor];
+        }
+        else{
+            self.view.backgroundColor = [UIColor whiteColor];        }
+    }
 }
 -(void) viewWillDisappear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = YES;
@@ -45,6 +55,16 @@
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"ㄑ找回密码" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftButton)];
     [leftButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica-Bold" size:21.0], NSFontAttributeName,
     [UIColor colorWithRed:21/255.0 green:49/255.0 blue:88/255.0 alpha:1.0], NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle mode = UITraitCollection.currentTraitCollection.userInterfaceStyle;
+        if (mode == UIUserInterfaceStyleDark) {
+            [leftButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica-Bold" size:21.0], NSFontAttributeName,
+            [UIColor whiteColor], NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
+        }
+        else{
+            //亮色模式
+        }
+    }
     self.navigationItem.leftBarButtonItem =leftButton;
     //设置右滑返回手势的代理为自身
     [self setLable];
@@ -67,7 +87,6 @@
     label1.attributedText = string;
     label1.textColor = [UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0];
     label1.alpha = 0.64;
-    
 
     UILabel *label3 = [[UILabel alloc] init];
     self.lable3 = label3;
@@ -76,6 +95,17 @@
     [self.view addSubview:label3];
     label3.text = @" ";
     label3.textColor = [UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0];
+    //适配黑暗模式
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle mode = UITraitCollection.currentTraitCollection.userInterfaceStyle;
+        if (mode == UIUserInterfaceStyleDark) {
+            label1.textColor = [UIColor whiteColor];
+            label3.textColor = [UIColor whiteColor];
+        }
+        else{
+            //亮色模式
+        }
+    }
     
     [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(20);
@@ -97,6 +127,15 @@
     tf.keyboardType = UIKeyboardTypeNumberPad;
     tf.textContainerInset = UIEdgeInsetsMake(15, 10, 10, 10);//设置边界间距
     tf.backgroundColor = [UIColor colorWithRed:232/255.0 green:240/255.0 blue:252/255.0 alpha:1.0];
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle mode = UITraitCollection.currentTraitCollection.userInterfaceStyle;
+        if (mode == UIUserInterfaceStyleDark) {
+            tf.textColor = [UIColor blackColor];
+        }
+        else{
+           //tf.textColor = [UIColor whiteColor];
+        }
+    }
     [self.view addSubview:tf];
       self.tf=tf;
       
@@ -131,6 +170,7 @@
 
 -(void) setBtn{
     UIButton *btn =[UIButton buttonWithType:UIButtonTypeSystem];
+    self.btn = btn;
     btn.frame = CGRectMake(48*kRateX, 310*kRateY, 280*kRateX, 52*kRateY);
     [btn.layer setMasksToBounds:YES];
     [btn.layer setCornerRadius:25.0];
@@ -140,6 +180,7 @@
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     btn.titleLabel.font = [UIFont fontWithName:@"Arial" size:18.0];
     [btn addTarget:self action:@selector(jumpTOset) forControlEvents:UIControlEventTouchUpInside];
+    btn.enabled = NO;//默认不能点击,获取验证码后才能点击
     [self.view addSubview:btn];
     
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -168,7 +209,6 @@
 }
 
 -(void) jumpTOset{
-    
     NSNumber *codeNum = [NSNumber numberWithString:self.tf.text];
     [[HttpClient defaultClient] requestWithPath:@"https://cyxbsmobile.redrock.team/wxapi/user-secret/user/valid/email" method:HttpRequestPost parameters:@{@"stu_num":self.idString ,@"email":self.lable3.text,@"code":codeNum} prepareExecute:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
      //   NSLog(@"%@",responseObject);
@@ -242,6 +282,7 @@
 }
 
 -(void) getMailCode{
+    self.btn.enabled = YES;
     [self openCountdown];
     [[HttpClient defaultClient] requestWithPath:@"https://cyxbsmobile.redrock.team/wxapi/user-secret/user/valid/email/code" method:HttpRequestPost parameters:@{@"stu_num":self.idString} prepareExecute:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         

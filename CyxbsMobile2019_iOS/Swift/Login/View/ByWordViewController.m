@@ -28,6 +28,16 @@
 -(void) viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = NO;
     
+    //适配黑暗模式
+     if (@available(iOS 13.0, *)) {
+         UIUserInterfaceStyle mode = UITraitCollection.currentTraitCollection.userInterfaceStyle;
+         if (mode == UIUserInterfaceStyleDark) {
+             self.view.backgroundColor = [UIColor blackColor];
+         }
+         else{
+             self.view.backgroundColor = [UIColor whiteColor];        }
+     }
+    
 }
 -(void) viewWillDisappear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = YES;
@@ -40,6 +50,16 @@
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"ㄑ找回密码" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftButton)];
     [leftButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica-Bold" size:21.0], NSFontAttributeName,
     [UIColor colorWithRed:21/255.0 green:49/255.0 blue:88/255.0 alpha:1.0], NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle mode = UITraitCollection.currentTraitCollection.userInterfaceStyle;
+        if (mode == UIUserInterfaceStyleDark) {
+            [leftButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica-Bold" size:21.0], NSFontAttributeName,
+            [UIColor whiteColor], NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
+        }
+        else{
+            //亮色模式
+        }
+    }
     self.navigationItem.leftBarButtonItem =leftButton;
     
     [self setLable];
@@ -80,6 +100,19 @@
     label3.attributedText = string3;
     label3.textColor = [UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0];
     label3.alpha = 1.0;
+    
+    //适配黑暗模式
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle mode = UITraitCollection.currentTraitCollection.userInterfaceStyle;
+        if (mode == UIUserInterfaceStyleDark) {
+            label1.textColor = [UIColor whiteColor];
+            label2.textColor = [UIColor whiteColor];
+            label3.textColor = [UIColor whiteColor];
+        }
+        else{
+            //亮色模式
+        }
+    }
 }
 -(void) dismissKeyBoard{
     [self.tf resignFirstResponder];
@@ -92,6 +125,16 @@
     tf.layer.masksToBounds = YES;
     tf.textContainerInset = UIEdgeInsetsMake(15, 10, 10, 10);//设置边界间距
     tf.backgroundColor = [UIColor colorWithRed:232/255.0 green:240/255.0 blue:252/255.0 alpha:1.0];
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle mode = UITraitCollection.currentTraitCollection.userInterfaceStyle;
+        if (mode == UIUserInterfaceStyleDark) {
+            tf.textColor = [UIColor blackColor];
+        }
+        else{
+           //tf.textColor = [UIColor whiteColor];
+            
+        }
+    }
     [self.view addSubview:tf];
       self.tf=tf;
       
