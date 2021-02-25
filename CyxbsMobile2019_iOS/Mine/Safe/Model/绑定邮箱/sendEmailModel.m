@@ -16,7 +16,6 @@
     [client requestWithPath:SENDEMAILCODEAPI method:HttpRequestPost parameters:param prepareExecute:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         self->_Block(responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"发送邮箱失败了============》〉》〉》〉》〉》〉");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"NoNetWorkToBindingEmail" object:nil userInfo:nil];
     }];
 }
