@@ -12,6 +12,7 @@
 
 - (void)sendQuestionAndAnswerWithId:(NSNumber *) questionid AndContent:(NSString *)content {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = .8f;
     AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializer];
     [responseSerializer setRemovesKeysWithNullValues:YES];
     [responseSerializer.acceptableContentTypes setByAddingObjectsFromSet:[NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", @"text/plain",@"application/atom+xml",@"application/xml",@"text/xml",nil]];
@@ -24,6 +25,7 @@
     [manager POST:SENDQUESTION parameters:param success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         self->_Block(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"NoNetWorkToGetQuestionList" object:nil userInfo:nil];
         NSLog(@"上传密保答案失败");
     }];
 }

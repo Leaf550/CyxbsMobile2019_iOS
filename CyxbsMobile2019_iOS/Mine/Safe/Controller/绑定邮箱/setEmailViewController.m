@@ -35,6 +35,7 @@
     [self.view addSubview:setEmailView];
     _setEmailView = setEmailView;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reSendCodeToEmail:) name:@"sendCodeToEmailAgain" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoNetWorkToBindingEmail) name:@"NoNetWorkToBindingEmail" object:nil];
 }
 
 
@@ -76,7 +77,7 @@
     if (self.isConnected == NO) {
         [self NoNetWorkToBindingEmail];
     }else {
-        if (([_setEmailView.emailField.text rangeOfString:@"@"].location == NSNotFound || [_setEmailView.emailField.text rangeOfString:@".com"].location == NSNotFound) || _setEmailView.emailField.text.length == 0) {
+        if ([_setEmailView.emailField.text rangeOfString:@"@"].location == NSNotFound || _setEmailView.emailField.text.length == 0) {
             _setEmailView.placeholderLab.hidden = NO;
         } else {
             _setEmailView.placeholderLab.hidden = YES;
@@ -97,7 +98,7 @@
         }else if ([info[@"status"] isEqual:[NSNumber numberWithInt:10022]]) {
             [self EmailPatternWrong];
         }else if ([info[@"status"] isEqual:[NSNumber numberWithInt:10009]]) {
-            
+            [self EmailLimited];
         }
     }];
 }
