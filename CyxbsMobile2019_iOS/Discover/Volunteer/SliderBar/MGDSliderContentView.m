@@ -63,7 +63,6 @@
 - (void)initContentView {
     for (UIViewController *vc in self.contentsVC) {
         NSUInteger index = [self.contentsVC indexOfObject:vc];
-        vc.view.backgroundColor = [UIColor redColor];
         vc.view.frame = CGRectMake(index * CGRectGetWidth(_scrollView.frame), 0, CGRectGetWidth(_scrollView.frame), CGRectGetHeight(_scrollView.frame));
         [_scrollView addSubview:vc.view];
     }

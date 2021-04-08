@@ -22,14 +22,19 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if ([super initWithFrame:frame]) {
         UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        backView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.14];
+        backView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];
+        backView.alpha = 0.14;
         [self addSubview:backView];
         _backView = backView;
         
         UIView *popView = [[UIView alloc] init];
-        popView.backgroundColor = [UIColor whiteColor];
+        if (@available(iOS 11.0, *)) {
+            popView.backgroundColor = [UIColor colorNamed:@"MGDActivityBackColor"];
+        } else {
+            // Fallback on earlier versions
+        }
         popView.layer.cornerRadius = 8;
-        [_backView addSubview:popView];
+        [self addSubview:popView];
         _popView = popView;
         
         UIImageView *imageView = [[UIImageView alloc] init];
@@ -39,7 +44,11 @@
         
         UILabel *logOutLabel = [[UILabel alloc] init];
         logOutLabel.text = @"取消绑定";
-        logOutLabel.textColor = [UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0];
+        if (@available(iOS 11.0, *)) {
+            logOutLabel.textColor = [UIColor colorNamed:@"MGDLoginTitleColor"];
+        } else {
+            // Fallback on earlier versions
+        }
         logOutLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size: 18];
         logOutLabel.textAlignment = NSTextAlignmentCenter;
         [_popView addSubview:logOutLabel];
@@ -48,7 +57,11 @@
         UILabel *queryLogOutLabel = [[UILabel alloc] init];
         queryLogOutLabel.text = @"是否取消志愿者账号绑定？";
         queryLogOutLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size: 11];
-        queryLogOutLabel.textColor = [UIColor colorWithRed:42/255.0 green:78/255.0 blue:132/255.0 alpha:1.0];
+        if (@available(iOS 11.0, *)) {
+            queryLogOutLabel.textColor = [UIColor colorNamed:@"MGDLoginTitleColor"];
+        } else {
+            // Fallback on earlier versions
+        }
         queryLogOutLabel.textAlignment = NSTextAlignmentCenter;
         [_popView addSubview:queryLogOutLabel];
         _queryyLogOutLabel = queryLogOutLabel;

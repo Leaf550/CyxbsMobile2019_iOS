@@ -76,36 +76,46 @@
     self.loadHud.labelText = @"正在登录";
     self.account = _loginView.accountField.text;
     self.password = _loginView.passwordField.text;
-
-    self.volunteer = [[VolunteerItem alloc] init];
-    dispatch_async(dispatch_queue_create("build volunteer model", DISPATCH_QUEUE_CONCURRENT), ^{
-        [self.volunteer getVolunteerInfoWithUserName:self.account andPassWord:self.password finishBlock:^(VolunteerItem *volunteer) {
-            self.volunteer = volunteer;
-            NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-            NSDictionary *volAcc = @{
-                @"volunteer_account": self.account,
-                @"volunteer_password": self.password
-            };
-            [user setObject:volAcc forKey:@"volunteer_information"];
-            [user synchronize];
-            QueryViewController *queryVC = [[QueryViewController alloc] initWithVolunteerItem:self.volunteer];
-            [self.navigationController pushViewController:queryVC animated:YES];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginVolunteerAccountSucceed" object:nil];
-        }];
-    });
+    if  (self.account.length == 0 || self.password.length == 0) {
+        [self missCountOrPassword];
+    }else {
+        self.volunteer = [[VolunteerItem alloc] init];
+        dispatch_async(dispatch_queue_create("build volunteer model", DISPATCH_QUEUE_CONCURRENT), ^{
+            [self.volunteer getVolunteerInfoWithUserName:self.account andPassWord:self.password finishBlock:^(VolunteerItem *volunteer) {
+                self.volunteer = volunteer;
+                NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+                NSDictionary *volAcc = @{
+                    @"volunteer_account": self.account,
+                    @"volunteer_password": self.password
+                };
+                [user setObject:volAcc forKey:@"volunteer_information"];
+                [user synchronize];
+                QueryViewController *queryVC = [[QueryViewController alloc] initWithVolunteerItem:self.volunteer];
+                [self.navigationController pushViewController:queryVC animated:YES];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginVolunteerAccountSucceed" object:nil];
+            }];
+        });
+    }
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
 
 #pragma mark - 登陆失败
 - (void)loginFailed {
     [self.loadHud hide:YES];
-    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"账号或密码错误" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"账号密码错误或网络异常" message:@"" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleCancel handler:nil];
     [alertC addAction:cancel];
     [self presentViewController:alertC animated:YES completion:nil];
 }
 
-
+#pragma mark - 账号密码为空
+- (void)missCountOrPassword {
+    [self.loadHud hide:YES];
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"账号密码不能为空" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleCancel handler:nil];
+    [alertC addAction:cancel];
+    [self presentViewController:alertC animated:YES completion:nil];
+}
 
 #pragma mark - 键盘展开与收起
 //- (void)keyboardWasShown:(NSNotification *)notification {

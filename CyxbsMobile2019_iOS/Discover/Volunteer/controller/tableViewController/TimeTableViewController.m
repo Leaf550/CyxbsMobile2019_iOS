@@ -33,7 +33,11 @@
     self.hour = self.volunteer.hour;
     self.eventArray = self.volunteer.eventsArray;
     self.eventsSortedByYears = self.volunteer.eventsSortedByYears;
-    self.view.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 11.0, *)) {
+        self.view.backgroundColor = [UIColor colorNamed:@"MGDActivityBackColor"];
+    } else {
+        // Fallback on earlier versions
+    }
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 }

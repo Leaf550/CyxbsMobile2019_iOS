@@ -38,6 +38,15 @@
                } else {
                   self.backgroundColor = [UIColor whiteColor];
                }
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                            selector:@selector(hideBottom)
+                            name:@"HideBottomClassScheduleTabBarView"
+                            object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                            selector:@selector(showBottom)
+                            name:@"ShowBottomClassScheduleTabBarView"
+                            object:nil];
         
         self.layer.shadowOffset = CGSizeMake(0, -5);
         self.layer.shadowOpacity = 0.05;
@@ -198,8 +207,8 @@
             [[UNUserNotificationCenter currentNotificationCenter] removePendingNotificationRequestsWithIdentifiers:@[@"remindBeforeCourseBegin"]];
         }
     }else{//无下一节课
-        self.classroomLabel.labelText =
-        self.classTimeLabel.labelText =
+        self.classroomLabel.labelText = @"---";
+        self.classTimeLabel.labelText = @"---";
         self.classLabel.labelText = @"无课了";
     }
 }
@@ -256,4 +265,16 @@
     [self addGesture];
     self.isInitingMySchedul = NO;
 }
+
+
+- (void)hideBottom {
+    self.userInteractionEnabled = NO;
+    self.alpha = 0;
+}
+
+- (void)showBottom {
+    self.userInteractionEnabled = YES;
+    self.alpha = 1;
+}
+
 @end

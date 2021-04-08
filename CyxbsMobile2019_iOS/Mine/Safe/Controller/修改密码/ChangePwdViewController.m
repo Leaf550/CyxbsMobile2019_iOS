@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIButton *backBtn;
 @property (nonatomic, strong) UIImageView *passwordImageView;
 @property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, strong) UIView *line;
 @property (nonatomic, strong) UITextField *passwordField;
 @property (nonatomic, strong) UIButton *nextBtn;
 @property (nonatomic, strong) UIButton *forgetBtn;
@@ -38,7 +39,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 11.0, *)) {
+        self.view.backgroundColor = [UIColor colorNamed:@"MGDSafePopBackColor"];
+    } else {
+        // Fallback on earlier versions
+    }
     [self buildUI];
     
 }
@@ -47,32 +52,52 @@
     
     ///返回按钮
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"我的返回"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"我的返回"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
     _backBtn = backBtn;
     
     [_backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top).mas_offset(SCREEN_HEIGHT * 0.0556);
-        make.left.mas_equalTo(self.view.mas_left).mas_offset(SCREEN_WIDTH * 0.0453);
-        make.width.mas_equalTo(SCREEN_WIDTH * 0.024);
-        make.height.mas_equalTo(SCREEN_HEIGHT * 0.0229);
+        make.top.left.mas_equalTo(self.view);
+        make.width.mas_equalTo(SCREEN_WIDTH * 0.024 + SCREEN_WIDTH * 0.0453);
+        make.height.mas_equalTo(SCREEN_HEIGHT * 0.0228 + SCREEN_HEIGHT * 0.0739);
     }];
+    [_backBtn setImageEdgeInsets:UIEdgeInsetsMake(SCREEN_HEIGHT * 0.0739, SCREEN_WIDTH * 0.0453, 0, 0)];
     
     ///标题
     UILabel *barTitle = [[UILabel alloc] init];
     barTitle.text = @"账号与安全";
     barTitle.font = [UIFont fontWithName:@"PingFangSC-Medium" size: 21];
-    barTitle.textColor = [UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0];
+    if (@available(iOS 11.0, *)) {
+        barTitle.textColor = [UIColor colorNamed:@"MGDSafeTextColor"];
+    } else {
+        // Fallback on earlier versions
+    }
     barTitle.textAlignment = NSTextAlignmentLeft;
     [self.view addSubview:barTitle];
     _barTitle = barTitle;
     
     [_barTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top).mas_offset(SCREEN_HEIGHT * 0.0469);
-        make.left.mas_equalTo(_backBtn.mas_right).mas_offset(SCREEN_WIDTH * 0.0293);
-        make.width.greaterThanOrEqualTo(@(SCREEN_WIDTH * 0.232));
-        make.height.mas_equalTo(SCREEN_WIDTH * 0.232 * 29/87);
+        make.top.mas_equalTo(self.view.top).mas_offset(SCREEN_HEIGHT * 0.069);
+        make.left.mas_equalTo(_backBtn.mas_right).mas_offset(SCREEN_WIDTH * 0.0347);
+        make.right.mas_equalTo(self.view.right);
+        make.height.mas_equalTo(SCREEN_WIDTH * 0.2 * 25/75);
+    }];
+    
+    ///分割线
+    UIView *line = [[UIView alloc] init];
+    if (@available(iOS 11.0, *)) {
+        line.backgroundColor = [UIColor colorNamed:@"MGDSafeLineColor"];
+    } else {
+        // Fallback on earlier versions
+    }
+    [self.view addSubview:line];
+    _line = line;
+    
+    [_line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.barTitle.mas_bottom).mas_offset(5);
+        make.left.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(3);
     }];
     
     ///密码图片
@@ -104,9 +129,14 @@
 
     ///输入框
     UITextField *passwordField = [[UITextField alloc] init];
-    passwordField.placeholder = @"请输入旧密码";
     passwordField.font = [UIFont fontWithName:@"PingFangSC-Regular" size: 18];
-    passwordField.textColor = [UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0];
+    if (@available(iOS 11.0, *)) {
+        passwordField.textColor = [UIColor colorNamed:@"MGDSafeTextColor"];
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"请输入旧密码" attributes:@{NSFontAttributeName: [UIFont fontWithName:@"PingFangSC-Medium" size:18], NSForegroundColorAttributeName:[UIColor colorNamed:@"MGDSafePlaceholderColor"]}];
+        passwordField.attributedPlaceholder = string;
+    } else {
+        // Fallback on earlier versions
+    }
     passwordField.borderStyle = UITextBorderStyleNone;
     passwordField.clearButtonMode = UITextFieldViewModeWhileEditing;
     [passwordField addTarget:self action:@selector(textFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
@@ -149,10 +179,12 @@
     nextBtn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size: 18];
     [nextBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [nextBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+//    [_nextBtn setEnabled:NO];
     nextBtn.backgroundColor = [UIColor colorWithRed:194/255.0 green:203/255.0 blue:254/255.0 alpha:1.0];
     [nextBtn addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:nextBtn];
     _nextBtn = nextBtn;
+    _nextBtn.enabled = NO;
     
     [nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view.mas_top).mas_offset(SCREEN_HEIGHT * 0.4815);
@@ -187,26 +219,43 @@
     
     ///弹出页面
     UIView *popView = [[UIView alloc] init];
-    popView.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 11.0, *)) {
+        popView.backgroundColor = [UIColor colorNamed:@"MGDSafeMainTableColor"];
+    } else {
+        // Fallback on earlier versions
+    }
     popView.layer.cornerRadius = 8;
     popView.userInteractionEnabled = YES;
     [self.view addSubview:popView];
     _popView = popView;
     
+    [_backView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id  _Nonnull sender){
+        [self->_popView removeFromSuperview];
+        [self->_backView removeFromSuperview];
+    }]];
+    
     ///两个按钮
     UIButton *findByEmail = [UIButton buttonWithType:UIButtonTypeSystem];
-    [findByEmail setBackgroundColor:[UIColor whiteColor]];
+    [findByEmail setBackgroundColor:[UIColor clearColor]];
     [findByEmail setTitle:@"邮箱找回" forState:UIControlStateNormal];
-    findByEmail.titleLabel.tintColor = [UIColor colorWithRed:42/255.0 green:78/255.0 blue:132/255.0 alpha:1.0];
+    if (@available(iOS 11.0, *)) {
+        findByEmail.titleLabel.tintColor = [UIColor colorNamed:@"MGDSafeTwoColor"];
+    } else {
+        // Fallback on earlier versions
+    }
     findByEmail.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size: 18];
     findByEmail.layer.cornerRadius = 8;
     [findByEmail addTarget:self action:@selector(findByEmail) forControlEvents:UIControlEventTouchUpInside];
     [popView addSubview:findByEmail];
     
     UIButton *findByQuestion = [UIButton buttonWithType:UIButtonTypeSystem];
-    [findByQuestion setBackgroundColor:[UIColor whiteColor]];
+    [findByQuestion setBackgroundColor:[UIColor clearColor]];
     [findByQuestion setTitle:@"密保找回" forState:UIControlStateNormal];
-    findByQuestion.titleLabel.tintColor = [UIColor colorWithRed:42/255.0 green:78/255.0 blue:132/255.0 alpha:1.0];
+    if (@available(iOS 11.0, *)) {
+        findByQuestion.titleLabel.tintColor = [UIColor colorNamed:@"MGDSafeTwoColor"];
+    } else {
+        // Fallback on earlier versions
+    }
     findByQuestion.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size: 18];
     findByQuestion.layer.cornerRadius = 8;
     [findByQuestion addTarget:self action:@selector(findByQuestion) forControlEvents:UIControlEventTouchUpInside];
@@ -234,14 +283,12 @@
     }];
 }
 
-///杨远舟通过邮箱找回密码界面
 - (void)findByEmail {
     ByPasswordViewController *vc = [[ByPasswordViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
     [self dismissPopview];
 }
 
-///杨远舟通过密保找回密码界面
 - (void)findByQuestion {
     ByWordViewController *vc = [[ByWordViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];

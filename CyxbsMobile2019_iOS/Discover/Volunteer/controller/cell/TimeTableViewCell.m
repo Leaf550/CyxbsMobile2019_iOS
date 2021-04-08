@@ -12,7 +12,6 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.backgroundColor = [UIColor whiteColor];
         [self BuildUI];
         [self BuildFrame];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -22,10 +21,14 @@
 
 - (void)BuildUI {
     ///日期
-    UILabel *dateLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"PingFangSC-Medium" size: 15] AndTextColor:[UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0]];
-    dateLabel.textAlignment = NSTextAlignmentLeft;
-    [self addSubview:dateLabel];
-    _dateLabel = dateLabel;
+    if (@available(iOS 11.0, *)) {
+        UILabel *dateLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"PingFangSC-Medium" size: 15] AndTextColor:[UIColor colorNamed:@"MGDLoginTitleColor"]];
+        dateLabel.textAlignment = NSTextAlignmentLeft;
+        [self addSubview:dateLabel];
+        _dateLabel = dateLabel;
+    } else {
+        // Fallback on earlier versions
+    }
     
     ///大圆圈
     UIView *bigCircle = [[UIView alloc] init];
@@ -49,31 +52,46 @@
     
     ///背景
     UIView *backView = [[UIView alloc] init];
-    backView.backgroundColor = [UIColor colorWithRed:232/255.0 green:241/255.0 blue:252/255.0 alpha:1.0];
+    if (@available(iOS 11.0, *)) {
+        backView.backgroundColor = [UIColor colorNamed:@"MGDTimeCellBackColor"];
+    } else {
+        // Fallback on earlier versions
+    }
     backView.layer.cornerRadius = 8;
     [self addSubview:backView];
     _backView = backView;
     
     ///志愿服务名字
     VolunteerLabel *volunteerLabel = [[VolunteerLabel alloc] init];
-//    volunteerLabel.text = @"2019-2020年第二学期学长学姐帮帮忙志愿服务";
     volunteerLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size: 16];
-    volunteerLabel.textColor = [UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0];
+    if (@available(iOS 11.0, *)) {
+        volunteerLabel.textColor = [UIColor colorNamed:@"MGDLoginTitleColor"];
+    } else {
+        // Fallback on earlier versions
+    }
     volunteerLabel.numberOfLines = 0;
     volunteerLabel.textAlignment = NSTextAlignmentLeft;
     [_backView addSubview:volunteerLabel];
     _volunteerLabel = volunteerLabel;
     
     ///时长
-    UILabel *timeLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"Impact" size: 30] AndTextColor:[UIColor colorWithRed:42/255.0 green:78/255.0 blue:132/255.0 alpha:1.0]];
-    timeLabel.textAlignment = NSTextAlignmentRight;
-    [_backView addSubview:timeLabel];
-    _timeLabel = timeLabel;
+    if (@available(iOS 11.0, *)) {
+        UILabel *timeLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"Impact" size: 30] AndTextColor:[UIColor colorNamed:@"MGDTimeCellHourColor"]];
+        timeLabel.textAlignment = NSTextAlignmentRight;
+        [_backView addSubview:timeLabel];
+        _timeLabel = timeLabel;
+    } else {
+        // Fallback on earlier versions
+    }
     
     ///单位
-    UILabel *unitLabel = [self creatLabelWithText:@"时" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 8] AndTextColor:[UIColor colorWithRed:42/255.0 green:78/255.0 blue:132/255.0 alpha:1.0]];
-    [_backView addSubview:unitLabel];
-    _unitLabel = unitLabel;
+    if (@available(iOS 11.0, *)) {
+        UILabel *unitLabel = [self creatLabelWithText:@"时" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 8] AndTextColor:[UIColor colorNamed:@"MGDTimeCellHourColor"]];
+        [_backView addSubview:unitLabel];
+        _unitLabel = unitLabel;
+    } else {
+        // Fallback on earlier versions
+    }
     
     ///地区图片
     UIImageView *areaImgaeView = [[UIImageView alloc]init];
@@ -82,10 +100,14 @@
     _areaImageView = areaImgaeView;
     
     ///地区文字
-    UILabel *areaLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTextColor:[UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0]];
-    areaLabel.textAlignment = NSTextAlignmentLeft;
-    [_backView addSubview:areaLabel];
-    _areaLabel = areaLabel;
+    if (@available(iOS 11.0, *)) {
+        UILabel *areaLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTextColor:[UIColor colorNamed:@"MGDTimeCellTextColor"]];
+        areaLabel.textAlignment = NSTextAlignmentLeft;
+        [_backView addSubview:areaLabel];
+        _areaLabel = areaLabel;
+    } else {
+        // Fallback on earlier versions
+    }
     
     ///组织图片
     UIImageView *groupImgaeView = [[UIImageView alloc]init];
@@ -94,10 +116,14 @@
     _groupImageView = groupImgaeView;
     
     ///组织文字
-    UILabel *groupLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTextColor:[UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0]];
-    groupLabel.textAlignment = NSTextAlignmentLeft;
-    [_backView addSubview:groupLabel];
-    _groupLabel = groupLabel;
+    if (@available(iOS 11.0, *)) {
+        UILabel *groupLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTextColor:[UIColor colorNamed:@"MGDTimeCellTextColor"]];
+        groupLabel.textAlignment = NSTextAlignmentLeft;
+        [_backView addSubview:groupLabel];
+        _groupLabel = groupLabel;
+    } else {
+        // Fallback on earlier versions
+    }
     
 }
 
@@ -133,7 +159,7 @@
     [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_bigCircle.mas_bottom);
         make.centerX.mas_equalTo(self.smallCircle);
-        make.height.mas_equalTo(SCREEN_WIDTH * 129.02/SCREEN_WIDTH);
+        make.bottom.mas_equalTo(self.backView).mas_offset(SCREEN_HEIGHT * 0.0037);
         make.width.mas_equalTo(1);
     }];
     
@@ -190,57 +216,6 @@
     }];
 }
 
-/**
- *  通过 CAShapeLayer 方式绘制虚线
- *
- *  param lineView:       需要绘制成虚线的view
- *  param lineLength:     虚线的宽度
- *  param lineSpacing:    虚线的间距
- *  param lineColor:      虚线的颜色
- *  param lineDirection   虚线的方向  YES 为水平方向， NO 为垂直方向
- **/
-- (void)drawLineOfDashByCAShapeLayer:(UIView *)lineView lineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor lineDirection:(BOOL)isHorizonal {
-
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-
-    [shapeLayer setBounds:lineView.bounds];
-
-    if (isHorizonal) {
-
-        [shapeLayer setPosition:CGPointMake(CGRectGetWidth(lineView.frame) / 2, CGRectGetHeight(lineView.frame))];
-
-    } else{
-        [shapeLayer setPosition:CGPointMake(CGRectGetWidth(lineView.frame) / 2, CGRectGetHeight(lineView.frame)/2)];
-    }
-
-    [shapeLayer setFillColor:[UIColor clearColor].CGColor];
-    //  设置虚线颜色为blackColor
-    [shapeLayer setStrokeColor:lineColor.CGColor];
-    //  设置虚线宽度
-    if (isHorizonal) {
-        [shapeLayer setLineWidth:CGRectGetHeight(lineView.frame)];
-    } else {
-
-        [shapeLayer setLineWidth:CGRectGetWidth(lineView.frame)];
-    }
-    [shapeLayer setLineJoin:kCALineJoinRound];
-    //  设置线宽，线间距
-    [shapeLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:lineLength], [NSNumber numberWithInt:lineSpacing], nil]];
-    //  设置路径
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathMoveToPoint(path, NULL, 0, 0);
-
-    if (isHorizonal) {
-        CGPathAddLineToPoint(path, NULL,CGRectGetWidth(lineView.frame), 0);
-    } else {
-        CGPathAddLineToPoint(path, NULL, 0, CGRectGetHeight(lineView.frame));
-    }
-
-    [shapeLayer setPath:path];
-    CGPathRelease(path);
-    //  把绘制好的虚线添加上来
-    [lineView.layer addSublayer:shapeLayer];
-}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -252,6 +227,27 @@
 
     // Configure the view for the selected state
 }
+
+- (void)layoutBorderToLayer:(UIView *)view {
+    CAShapeLayer *border = [CAShapeLayer layer];
+    // 线条颜色
+    border.strokeColor = [[UIColor blackColor] colorWithAlphaComponent:0.5].CGColor;
+    border.fillColor = nil;
+
+    CGFloat viewHeight = view.frame.size.height;
+    CGFloat viewWidth = view.frame.size.width;
+
+    border.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.0, 0.0, viewWidth, viewHeight) cornerRadius:view.layer.cornerRadius].CGPath;
+    border.frame = view.bounds;
+    // 不要设太大 不然看不出效果
+    border.lineWidth = 1.0f;
+    border.lineCap = @"square";
+    // 第一个是 线条长度 第二个是间距 nil时为实线
+    border.lineDashPattern = @[@5, @5];
+    [view.layer addSublayer:border];
+}
+
+
 
 @end
 

@@ -29,7 +29,7 @@
         self.httpRequestOperationManager = [AFHTTPRequestOperationManager manager];
         
         AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
-        requestSerializer.timeoutInterval = 15.0;
+        requestSerializer.timeoutInterval = .8f;
         [self.httpSessionManager setRequestSerializer:requestSerializer];
         [self.httpRequestOperationManager setRequestSerializer:requestSerializer];
         

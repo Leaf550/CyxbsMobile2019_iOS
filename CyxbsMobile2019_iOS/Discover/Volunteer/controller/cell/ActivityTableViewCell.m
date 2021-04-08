@@ -12,7 +12,6 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.backgroundColor = [UIColor whiteColor];
         [self BuildUI];
         [self BuildFrame];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -23,7 +22,11 @@
 - (void)BuildUI {
     ///背景
     UIView *backView = [[UIView alloc] init];
-    backView.backgroundColor = [UIColor colorWithRed:239/255.0 green:245/255.0 blue:253/255.0 alpha:1.0];
+    if (@available(iOS 11.0, *)) {
+        backView.backgroundColor = [UIColor colorNamed:@"MGDTimeCellBackColor"];
+    } else {
+        // Fallback on earlier versions
+    }
     backView.layer.cornerRadius = 8;
     [self addSubview:backView];
     _backView = backView;
@@ -31,20 +34,32 @@
     ///活动名称
     VolunteerLabel *activityLabel = [[VolunteerLabel alloc] init];
     activityLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size: 16];
-    activityLabel.textColor = [UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0];
+    if (@available(iOS 11.0, *)) {
+        activityLabel.textColor = [UIColor colorNamed:@"MGDLoginTitleColor"];
+    } else {
+        // Fallback on earlier versions
+    }
     activityLabel.textAlignment = NSTextAlignmentLeft;
     [_backView addSubview:activityLabel];
     _activityLabel = activityLabel;
     
     ///时长
-    UILabel *hourLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTextColor:[UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0]];
-    [_backView addSubview:hourLabel];
-    _hourLabel = hourLabel;
+    if (@available(iOS 11.0, *)) {
+        UILabel *hourLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTextColor:[UIColor colorNamed:@"MGDTimeCellTextColor"]];
+        [_backView addSubview:hourLabel];
+        _hourLabel = hourLabel;
+    } else {
+        // Fallback on earlier versions
+    }
     
     ///日期
-    UILabel *dateLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTextColor:[UIColor colorWithRed:21/255.0 green:49/255.0 blue:91/255.0 alpha:1.0]];
-    [_backView addSubview:dateLabel];
-    _dateLabel = dateLabel;
+    if (@available(iOS 11.0, *)) {
+        UILabel *dateLabel = [self creatLabelWithText:@"" AndFont:[UIFont fontWithName:@"PingFangSC-Regular" size: 13] AndTextColor:[UIColor colorNamed:@"MGDTimeCellTextColor"]];
+        [_backView addSubview:dateLabel];
+        _dateLabel = dateLabel;
+    } else {
+        // Fallback on earlier versions
+    }
     
     ///倒计时
     UILabel *countdownLabel = [[UILabel alloc] init];
